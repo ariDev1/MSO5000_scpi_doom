@@ -1,7 +1,10 @@
 
 # Doom SCPI Toolkit for Rigol MSO5000 Series
 
-![DOOM Mode](https://img.shields.io/badge/SCPI%20LEVEL-DEMONIC-red?style=for-the-badge)
+![Status](https://img.shields.io/badge/SCPI%20Status-DOOM--READY-red?style=for-the-badge)
+![License](https://img.shields.io/github/license/ariDev1/MSO5000_scpi_doom?style=for-the-badge)
+![Python](https://img.shields.io/badge/Made%20with-Python%203-blue?style=for-the-badge)
+![Public](https://img.shields.io/badge/Visibility-Public-brightgreen?style=for-the-badge)
 
 Welcome to the **Doom SCPI Toolkit**, a powerful and slightly insane command-line tool for exploring, testing, and fuzzing SCPI commands on Rigol MSO5000 series oscilloscopes.
 
