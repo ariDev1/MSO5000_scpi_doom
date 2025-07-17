@@ -1,11 +1,17 @@
 
-# Doom2 SCPI Toolkit for Rigol MSO5000 Series
+# Doom SCPI Toolkit for Rigol MSO5000 Series
 
 ![DOOM Mode](https://img.shields.io/badge/SCPI%20LEVEL-DEMONIC-red?style=for-the-badge)
 
-Welcome to the **Doom3 SCPI Toolkit**, a powerful and slightly insane command-line tool for exploring, testing, and fuzzing SCPI commands on Rigol MSO5000 series oscilloscopes.
+Welcome to the **Doom SCPI Toolkit**, a powerful and slightly insane command-line tool for exploring, testing, and fuzzing SCPI commands on Rigol MSO5000 series oscilloscopes.
 
 What started as a humble `doom2.py` has now evolved into a fully intelligent chaos machine with Pinky, Brain, and a growing SCPI consciousness.
+
+## 🖼️ Screenshot
+
+Here's a glimpse of `doom2.py` learning with full Pinky-BFG mode:
+
+![Screenshot of Doom3 in action](doc/screenshot.png)
 
 ## 🧠 Features
 

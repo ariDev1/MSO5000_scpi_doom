@@ -168,18 +168,23 @@ def run_waveform_test(scope, channel="CHAN1"):
 
 def fuzz_scope(scope, attempts=50):
     results = []
-    for i in range(attempts):
-        cmd = ":" + ":".join([
-            random.choice(["CHANnel1", "MATH1", "BUS1", "TRIGger", "DISPlay", "WAVeform"]),
-            random.choice(["SCALe", "OFFSet", "COUPling", "STATus", "GRADing", "FORM", "SOURce"]),
-        ]) + "?"
-        try:
-            r = scope.query(cmd).strip()
-            res = f"✅ {r}" if r else "⚠️ Empty"
-        except Exception as e:
-            res = f"❌ {e}"
-        results.append((cmd, res))
-        log(f"⚙️  {cmd:<40} → {res}", GREEN if '✅' in res else RED if '❌' in res else YELLOW)
+    try:
+        for i in range(attempts):
+            cmd = ":" + ":".join([
+                random.choice(["CHANnel1", "MATH1", "BUS1", "TRIGger", "DISPlay", "WAVeform"]),
+                random.choice(["SCALe", "OFFSet", "COUPling", "STATus", "GRADing", "FORM", "SOURce"]),
+            ]) + "?"
+            try:
+                r = scope.query(cmd).strip()
+                res = f"✅ {r}" if r else "⚠️ Empty"
+            except Exception as e:
+                res = f"❌ {e}"
+            results.append((cmd, res))
+            log(f"⚙️  {cmd:<40} → {res}", GREEN if '✅' in res else RED if '❌' in res else YELLOW)
+    
+    except KeyboardInterrupt:
+        log("\n🛑 FUZZ interrupted by user (Ctrl+C)", RED)
+    
     save_log("fuzz", results)
 
 def learn_scope(scope, attempts=100):
