@@ -1,0 +1,865 @@
+ACQuire      0     SET   0     
+ACQuire      1     GET   0     
+ACQuire      2     SET   6     AUTO (0), 1k (1), 10k (2), 100k (3), 1M (4), 10M (5), 25M (6), 50M (7), 100M (8), 125M (9), 200M (12), 250M (10), 500M (11), 1000 (1), 10000 (2), 100000 (3), 1000000 (4), 10000000 (5), 25000000 (6), 50000000 (7), 100000000 (8), 125000000 (9), 200000000 (12), 250000000 (10), 500000000 (11), 1e3 (1), 1e4 (2), 1e5 (3), 1e6 (4), 1e7 (5), 2.5e7 (6), 5e7 (7), 1e8 (8), 1.25e8 (9), 2e8 (12), 2.5e8 (10), 5e8 (11)
+ACQuire      3     GET   2     
+ACQuire      4     GET   15    
+ACQuire      5     SET   6     NORMal (0), PEAK (1), AVERages (2), HRESolution (3)
+ACQuire      6     GET   6     NORM (0), PEAK (1), AVER (2), HRES (3)
+ACQuire      7     SET   3     
+ACQuire      8     GET   3     
+BUS1         0     SET   6     PARallel (0), RS232 (1), SPI (2), IIC (3), IIS (7), LIN (4), CAN (5), FLEXray (6), M1553 (8)
+BUS1         1     GET   6     PAR (0), RS232 (1), SPI (2), IIC (3), IIS (7), LIN (4), CAN (5), FLEX (6), M1553 (8)
+BUS1         2     SET   3     
+BUS1         3     GET   3     
+BUS1         4     SET   6     HEX (0), ASCii (3), DEC (1), BIN (2)
+BUS1         5     GET   6     HEX (0), ASC (3), DEC (1), BIN (2)
+BUS1         6     SET   6     HEX (0), DEC (1), BIN (2), ASCii (3)
+BUS1         7     GET   6     HEX (0), DEC (1), BIN (2), ASC (3)
+BUS1         8     SET   6     PACKets (0), DETails (1), PAYLoad (2)
+BUS1         9     GET   6     PACK (0), DET (1), PAYL (2)
+BUS1         10    SET   4     
+BUS1         11    GET   5     
+BUS1         12    SET   0     
+BUS1         13    GET   0     
+BUS1         14    SET   34    
+BUS1         15    SET   6     PAL (0), TX (1), RX (2), SCL (3), SDA (4), CS (5), CLK (6), MISO (7), MOSI (8), LIN (9), CAN (10), CANSub1 (11)
+BUS1         16    GET   15    
+BUS1         17    SET   6     PAL (0), TX (1), RX (2), SCL (3), SDA (4), CS (5), CLK (6), MISO (7), MOSI (8), LIN (9), CAN (10), CANS1 (11)
+BUS1         18    SET   6     CHANnel1 (1), CHANnel2 (2), CHANnel3 (3), CHANnel4 (4), D0 (5), D1 (6), D2 (7), D3 (8), D4 (9), D5 (10), D6 (11), D7 (12), D8 (13), D9 (14), D10 (15), D11 (16), D12 (17), D13 (18), D14 (19), D15 (20), OFF (0)
+BUS1         19    GET   6     CHAN1 (1), CHAN2 (2), CHAN3 (3), CHAN4 (4), D0 (5), D1 (6), D2 (7), D3 (8), D4 (9), D5 (10), D6 (11), D7 (12), D8 (13), D9 (14), D10 (15), D11 (16), D12 (17), D13 (18), D14 (19), D15 (20), OFF (0)
+BUS1         20    SET   6     POSitive (0), NEGative (1), BOTH (2)
+BUS1         21    GET   6     POS (0), NEG (1), BOTH (2)
+BUS1         22    SET   6     CH1 (1), CH2 (2), CH3 (3), CH4 (4), D7D0 (5), D15D8 (6), D15D0 (7), D0D7 (8), D8D15 (9), D0D15 (10), USER (11)
+BUS1         23    GET   6     CH1 (1), CH2 (2), CH3 (3), CH4 (4), D7D0 (5), D15D8 (6), D15D0 (7), D0D7 (8), D8D15 (9), D0D15 (10), USER (11)
+BUS1         24    SET   6     CHANnel1 (1), CHANnel2 (2), CHANnel3 (3), CHANnel4 (4), D0 (5), D1 (6), D2 (7), D3 (8), D4 (9), D5 (10), D6 (11), D7 (12), D8 (13), D9 (14), D10 (15), D11 (16), D12 (17), D13 (18), D14 (19), D15 (20)
+BUS1         25    GET   6     CHAN1 (1), CHAN2 (2), CHAN3 (3), CHAN4 (4), D0 (5), D1 (6), D2 (7), D3 (8), D4 (9), D5 (10), D6 (11), D7 (12), D8 (13), D9 (14), D10 (15), D11 (16), D12 (17), D13 (18), D14 (19), D15 (20)
+BUS1         26    SET   6     NEGative (0), POSitive (1)
+BUS1         27    GET   6     NEG (0), POS (1)
+BUS1         28    SET   36    
+BUS1         29    GET   13    
+BUS1         30    SET   6     POSitive (0), NEGative (1)
+BUS1         31    GET   6     POS (0), NEG (1)
+BUS1         32    SET   6     LSB (0), MSB (1)
+BUS1         33    GET   6     LSB (0), MSB (1)
+BUS1         34    SET   6     5 (5), 6 (6), 7 (7), 8 (8), 9 (9)
+BUS1         35    GET   6     5 (5), 6 (6), 7 (7), 8 (8), 9 (9)
+BUS1         36    SET   6     1 (0), 1.5 (2), 2 (1)
+BUS1         37    GET   6     1 (0), 1.5 (2), 2 (1)
+BUS1         38    SET   6     NONE (0), ODD (1), EVEN (2)
+BUS1         39    GET   6     NONE (0), ODD (1), EVEN (2)
+BUS1         40    SET   6     NULL (0), LF (10), CR (13), SP (32)
+BUS1         41    GET   6     NULL (0), LF (10), CR (13), SP (32)
+BUS1         42    SET   6     NORMal (0), RW (1)
+BUS1         43    GET   6     NORM (0), RW (1)
+BUS1         44    SET   6     HIGH (1), LOW (0)
+BUS1         45    GET   6     HIGH (1), LOW (0)
+BUS1         46    SET   6     MSB (1), LSB (0)
+BUS1         47    GET   6     MSB (1), LSB (0)
+BUS1         48    SET   6     CS (0), TIMeout (1)
+BUS1         49    GET   6     CS (0), TIM (1)
+BUS1         50    SET   6     TX (3), RX (2), CANH (0), CANL (1), DIFFerential (4)
+BUS1         51    GET   6     TX (3), RX (2), CANH (0), CANL (1), DIFF (4)
+BUS1         52    SET   6     BP (0), BM (1), RT (2)
+BUS1         53    GET   6     BP (0), BM (1), RT (2)
+BUS1         54    SET   6     NOPARity (0), PARity (1)
+BUS1         55    GET   6     NOP (0), PAR (1)
+BUS1         56    SET   6     V1X (0), V2X (1), MIXed (2)
+BUS1         57    GET   6     V1X (0), V2X (1), MIX (2)
+BUS1         58    SET   6     IIS (0), LJ (1), RJ (2)
+BUS1         59    GET   6     IIS (0), LJ (1), RJ (2)
+BUS1         60    SET   6     NEGative (1), POSitive (0)
+BUS1         61    GET   6     NEG (1), POS (0)
+BUS1         62    SET   6     CHANnel1 (1), CHANnel2 (2), CHANnel3 (3), CHANnel4 (4)
+BUS1         63    GET   6     CHAN1 (1), CHAN2 (2), CHAN3 (3), CHAN4 (4)
+BUS2         0     SET   6     PARallel (0), RS232 (1), SPI (2), IIC (3), IIS (7), LIN (4), CAN (5), FLEXray (6), M1553 (8)
+BUS2         1     GET   6     PAR (0), RS232 (1), SPI (2), IIC (3), IIS (7), LIN (4), CAN (5), FLEX (6), M1553 (8)
+BUS2         2     SET   3     
+BUS2         3     GET   3     
+BUS2         4     SET   6     HEX (0), ASCii (3), DEC (1), BIN (2)
+BUS2         5     GET   6     HEX (0), ASC (3), DEC (1), BIN (2)
+BUS2         6     SET   6     HEX (0), DEC (1), BIN (2), ASCii (3)
+BUS2         7     GET   6     HEX (0), DEC (1), BIN (2), ASC (3)
+BUS2         8     SET   6     PACKets (0), DETails (1), PAYLoad (2)
+BUS2         9     GET   6     PACK (0), DET (1), PAYL (2)
+BUS2         10    SET   4     
+BUS2         11    GET   5     
+BUS2         12    SET   0     
+BUS2         13    GET   0     
+BUS2         14    SET   34    
+BUS2         15    SET   6     PAL (0), TX (1), RX (2), SCL (3), SDA (4), CS (5), CLK (6), MISO (7), MOSI (8), LIN (9), CAN (10), CANSub1 (11)
+BUS2         16    GET   15    
+BUS2         17    SET   6     PAL (0), TX (1), RX (2), SCL (3), SDA (4), CS (5), CLK (6), MISO (7), MOSI (8), LIN (9), CAN (10), CANS1 (11)
+BUS2         18    SET   6     CHANnel1 (1), CHANnel2 (2), CHANnel3 (3), CHANnel4 (4), D0 (5), D1 (6), D2 (7), D3 (8), D4 (9), D5 (10), D6 (11), D7 (12), D8 (13), D9 (14), D10 (15), D11 (16), D12 (17), D13 (18), D14 (19), D15 (20), OFF (0)
+BUS2         19    GET   6     CHAN1 (1), CHAN2 (2), CHAN3 (3), CHAN4 (4), D0 (5), D1 (6), D2 (7), D3 (8), D4 (9), D5 (10), D6 (11), D7 (12), D8 (13), D9 (14), D10 (15), D11 (16), D12 (17), D13 (18), D14 (19), D15 (20), OFF (0)
+BUS2         20    SET   6     POSitive (0), NEGative (1), BOTH (2)
+BUS2         21    GET   6     POS (0), NEG (1), BOTH (2)
+BUS2         22    SET   6     CH1 (1), CH2 (2), CH3 (3), CH4 (4), D7D0 (5), D15D8 (6), D15D0 (7), D0D7 (8), D8D15 (9), D0D15 (10), USER (11)
+BUS2         23    GET   6     CH1 (1), CH2 (2), CH3 (3), CH4 (4), D7D0 (5), D15D8 (6), D15D0 (7), D0D7 (8), D8D15 (9), D0D15 (10), USER (11)
+BUS2         24    SET   6     CHANnel1 (1), CHANnel2 (2), CHANnel3 (3), CHANnel4 (4), D0 (5), D1 (6), D2 (7), D3 (8), D4 (9), D5 (10), D6 (11), D7 (12), D8 (13), D9 (14), D10 (15), D11 (16), D12 (17), D13 (18), D14 (19), D15 (20)
+BUS2         25    GET   6     CHAN1 (1), CHAN2 (2), CHAN3 (3), CHAN4 (4), D0 (5), D1 (6), D2 (7), D3 (8), D4 (9), D5 (10), D6 (11), D7 (12), D8 (13), D9 (14), D10 (15), D11 (16), D12 (17), D13 (18), D14 (19), D15 (20)
+BUS2         26    SET   6     NEGative (0), POSitive (1)
+BUS2         27    GET   6     NEG (0), POS (1)
+BUS2         28    SET   36    
+BUS2         29    GET   13    
+BUS2         30    SET   6     POSitive (0), NEGative (1)
+BUS2         31    GET   6     POS (0), NEG (1)
+BUS2         32    SET   6     LSB (0), MSB (1)
+BUS2         33    GET   6     LSB (0), MSB (1)
+BUS2         34    SET   6     5 (5), 6 (6), 7 (7), 8 (8), 9 (9)
+BUS2         35    GET   6     5 (5), 6 (6), 7 (7), 8 (8), 9 (9)
+BUS2         36    SET   6     1 (0), 1.5 (2), 2 (1)
+BUS2         37    GET   6     1 (0), 1.5 (2), 2 (1)
+BUS2         38    SET   6     NONE (0), ODD (1), EVEN (2)
+BUS2         39    GET   6     NONE (0), ODD (1), EVEN (2)
+BUS2         40    SET   6     NULL (0), LF (10), CR (13), SP (32)
+BUS2         41    GET   6     NULL (0), LF (10), CR (13), SP (32)
+BUS2         42    SET   6     NORMal (0), RW (1)
+BUS2         43    GET   6     NORM (0), RW (1)
+BUS2         44    SET   6     HIGH (1), LOW (0)
+BUS2         45    GET   6     HIGH (1), LOW (0)
+BUS2         46    SET   6     MSB (1), LSB (0)
+BUS2         47    GET   6     MSB (1), LSB (0)
+BUS2         48    SET   6     CS (0), TIMeout (1)
+BUS2         49    GET   6     CS (0), TIM (1)
+BUS2         50    SET   6     TX (3), RX (2), CANH (0), CANL (1), DIFFerential (4)
+BUS2         51    GET   6     TX (3), RX (2), CANH (0), CANL (1), DIFF (4)
+BUS2         52    SET   6     BP (0), BM (1), RT (2)
+BUS2         53    GET   6     BP (0), BM (1), RT (2)
+BUS2         54    SET   6     NOPARity (0), PARity (1)
+BUS2         55    GET   6     NOP (0), PAR (1)
+BUS2         56    SET   6     V1X (0), V2X (1), MIXed (2)
+BUS2         57    GET   6     V1X (0), V2X (1), MIX (2)
+BUS2         58    SET   6     IIS (0), LJ (1), RJ (2)
+BUS2         59    GET   6     IIS (0), LJ (1), RJ (2)
+BUS2         60    SET   6     NEGative (1), POSitive (0)
+BUS2         61    GET   6     NEG (1), POS (0)
+BUS2         62    SET   6     CHANnel1 (1), CHANnel2 (2), CHANnel3 (3), CHANnel4 (4)
+BUS2         63    GET   6     CHAN1 (1), CHAN2 (2), CHAN3 (3), CHAN4 (4)
+BUS3         0     SET   6     PARallel (0), RS232 (1), SPI (2), IIC (3), IIS (7), LIN (4), CAN (5), FLEXray (6), M1553 (8)
+BUS3         1     GET   6     PAR (0), RS232 (1), SPI (2), IIC (3), IIS (7), LIN (4), CAN (5), FLEX (6), M1553 (8)
+BUS3         2     SET   3     
+BUS3         3     GET   3     
+BUS3         4     SET   6     HEX (0), ASCii (3), DEC (1), BIN (2)
+BUS3         5     GET   6     HEX (0), ASC (3), DEC (1), BIN (2)
+BUS3         6     SET   6     HEX (0), DEC (1), BIN (2), ASCii (3)
+BUS3         7     GET   6     HEX (0), DEC (1), BIN (2), ASC (3)
+BUS3         8     SET   6     PACKets (0), DETails (1), PAYLoad (2)
+BUS3         9     GET   6     PACK (0), DET (1), PAYL (2)
+BUS3         10    SET   4     
+BUS3         11    GET   5     
+BUS3         12    SET   0     
+BUS3         13    GET   0     
+BUS3         14    SET   34    
+BUS3         15    SET   6     PAL (0), TX (1), RX (2), SCL (3), SDA (4), CS (5), CLK (6), MISO (7), MOSI (8), LIN (9), CAN (10), CANSub1 (11)
+BUS3         16    GET   15    
+BUS3         17    SET   6     PAL (0), TX (1), RX (2), SCL (3), SDA (4), CS (5), CLK (6), MISO (7), MOSI (8), LIN (9), CAN (10), CANS1 (11)
+BUS3         18    SET   6     CHANnel1 (1), CHANnel2 (2), CHANnel3 (3), CHANnel4 (4), D0 (5), D1 (6), D2 (7), D3 (8), D4 (9), D5 (10), D6 (11), D7 (12), D8 (13), D9 (14), D10 (15), D11 (16), D12 (17), D13 (18), D14 (19), D15 (20), OFF (0)
+BUS3         19    GET   6     CHAN1 (1), CHAN2 (2), CHAN3 (3), CHAN4 (4), D0 (5), D1 (6), D2 (7), D3 (8), D4 (9), D5 (10), D6 (11), D7 (12), D8 (13), D9 (14), D10 (15), D11 (16), D12 (17), D13 (18), D14 (19), D15 (20), OFF (0)
+BUS3         20    SET   6     POSitive (0), NEGative (1), BOTH (2)
+BUS3         21    GET   6     POS (0), NEG (1), BOTH (2)
+BUS3         22    SET   6     CH1 (1), CH2 (2), CH3 (3), CH4 (4), D7D0 (5), D15D8 (6), D15D0 (7), D0D7 (8), D8D15 (9), D0D15 (10), USER (11)
+BUS3         23    GET   6     CH1 (1), CH2 (2), CH3 (3), CH4 (4), D7D0 (5), D15D8 (6), D15D0 (7), D0D7 (8), D8D15 (9), D0D15 (10), USER (11)
+BUS3         24    SET   6     CHANnel1 (1), CHANnel2 (2), CHANnel3 (3), CHANnel4 (4), D0 (5), D1 (6), D2 (7), D3 (8), D4 (9), D5 (10), D6 (11), D7 (12), D8 (13), D9 (14), D10 (15), D11 (16), D12 (17), D13 (18), D14 (19), D15 (20)
+BUS3         25    GET   6     CHAN1 (1), CHAN2 (2), CHAN3 (3), CHAN4 (4), D0 (5), D1 (6), D2 (7), D3 (8), D4 (9), D5 (10), D6 (11), D7 (12), D8 (13), D9 (14), D10 (15), D11 (16), D12 (17), D13 (18), D14 (19), D15 (20)
+BUS3         26    SET   6     NEGative (0), POSitive (1)
+BUS3         27    GET   6     NEG (0), POS (1)
+BUS3         28    SET   36    
+BUS3         29    GET   13    
+BUS3         30    SET   6     POSitive (0), NEGative (1)
+BUS3         31    GET   6     POS (0), NEG (1)
+BUS3         32    SET   6     LSB (0), MSB (1)
+BUS3         33    GET   6     LSB (0), MSB (1)
+BUS3         34    SET   6     5 (5), 6 (6), 7 (7), 8 (8), 9 (9)
+BUS3         35    GET   6     5 (5), 6 (6), 7 (7), 8 (8), 9 (9)
+BUS3         36    SET   6     1 (0), 1.5 (2), 2 (1)
+BUS3         37    GET   6     1 (0), 1.5 (2), 2 (1)
+BUS3         38    SET   6     NONE (0), ODD (1), EVEN (2)
+BUS3         39    GET   6     NONE (0), ODD (1), EVEN (2)
+BUS3         40    SET   6     NULL (0), LF (10), CR (13), SP (32)
+BUS3         41    GET   6     NULL (0), LF (10), CR (13), SP (32)
+BUS3         42    SET   6     NORMal (0), RW (1)
+BUS3         43    GET   6     NORM (0), RW (1)
+BUS3         44    SET   6     HIGH (1), LOW (0)
+BUS3         45    GET   6     HIGH (1), LOW (0)
+BUS3         46    SET   6     MSB (1), LSB (0)
+BUS3         47    GET   6     MSB (1), LSB (0)
+BUS3         48    SET   6     CS (0), TIMeout (1)
+BUS3         49    GET   6     CS (0), TIM (1)
+BUS3         50    SET   6     TX (3), RX (2), CANH (0), CANL (1), DIFFerential (4)
+BUS3         51    GET   6     TX (3), RX (2), CANH (0), CANL (1), DIFF (4)
+BUS3         52    SET   6     BP (0), BM (1), RT (2)
+BUS3         53    GET   6     BP (0), BM (1), RT (2)
+BUS3         54    SET   6     NOPARity (0), PARity (1)
+BUS3         55    GET   6     NOP (0), PAR (1)
+BUS3         56    SET   6     V1X (0), V2X (1), MIXed (2)
+BUS3         57    GET   6     V1X (0), V2X (1), MIX (2)
+BUS3         58    SET   6     IIS (0), LJ (1), RJ (2)
+BUS3         59    GET   6     IIS (0), LJ (1), RJ (2)
+BUS3         60    SET   6     NEGative (1), POSitive (0)
+BUS3         61    GET   6     NEG (1), POS (0)
+BUS3         62    SET   6     CHANnel1 (1), CHANnel2 (2), CHANnel3 (3), CHANnel4 (4)
+BUS3         63    GET   6     CHAN1 (1), CHAN2 (2), CHAN3 (3), CHAN4 (4)
+BUS4         0     SET   6     PARallel (0), RS232 (1), SPI (2), IIC (3), IIS (7), LIN (4), CAN (5), FLEXray (6), M1553 (8)
+BUS4         1     GET   6     PAR (0), RS232 (1), SPI (2), IIC (3), IIS (7), LIN (4), CAN (5), FLEX (6), M1553 (8)
+BUS4         2     SET   3     
+BUS4         3     GET   3     
+BUS4         4     SET   6     HEX (0), ASCii (3), DEC (1), BIN (2)
+BUS4         5     GET   6     HEX (0), ASC (3), DEC (1), BIN (2)
+BUS4         6     SET   6     HEX (0), DEC (1), BIN (2), ASCii (3)
+BUS4         7     GET   6     HEX (0), DEC (1), BIN (2), ASC (3)
+BUS4         8     SET   6     PACKets (0), DETails (1), PAYLoad (2)
+BUS4         9     GET   6     PACK (0), DET (1), PAYL (2)
+BUS4         10    SET   4     
+BUS4         11    GET   5     
+BUS4         12    SET   0     
+BUS4         13    GET   0     
+BUS4         14    SET   34    
+BUS4         15    SET   6     PAL (0), TX (1), RX (2), SCL (3), SDA (4), CS (5), CLK (6), MISO (7), MOSI (8), LIN (9), CAN (10), CANSub1 (11)
+BUS4         16    GET   15    
+BUS4         17    SET   6     PAL (0), TX (1), RX (2), SCL (3), SDA (4), CS (5), CLK (6), MISO (7), MOSI (8), LIN (9), CAN (10), CANS1 (11)
+BUS4         18    SET   6     CHANnel1 (1), CHANnel2 (2), CHANnel3 (3), CHANnel4 (4), D0 (5), D1 (6), D2 (7), D3 (8), D4 (9), D5 (10), D6 (11), D7 (12), D8 (13), D9 (14), D10 (15), D11 (16), D12 (17), D13 (18), D14 (19), D15 (20), OFF (0)
+BUS4         19    GET   6     CHAN1 (1), CHAN2 (2), CHAN3 (3), CHAN4 (4), D0 (5), D1 (6), D2 (7), D3 (8), D4 (9), D5 (10), D6 (11), D7 (12), D8 (13), D9 (14), D10 (15), D11 (16), D12 (17), D13 (18), D14 (19), D15 (20), OFF (0)
+BUS4         20    SET   6     POSitive (0), NEGative (1), BOTH (2)
+BUS4         21    GET   6     POS (0), NEG (1), BOTH (2)
+BUS4         22    SET   6     CH1 (1), CH2 (2), CH3 (3), CH4 (4), D7D0 (5), D15D8 (6), D15D0 (7), D0D7 (8), D8D15 (9), D0D15 (10), USER (11)
+BUS4         23    GET   6     CH1 (1), CH2 (2), CH3 (3), CH4 (4), D7D0 (5), D15D8 (6), D15D0 (7), D0D7 (8), D8D15 (9), D0D15 (10), USER (11)
+BUS4         24    SET   6     CHANnel1 (1), CHANnel2 (2), CHANnel3 (3), CHANnel4 (4), D0 (5), D1 (6), D2 (7), D3 (8), D4 (9), D5 (10), D6 (11), D7 (12), D8 (13), D9 (14), D10 (15), D11 (16), D12 (17), D13 (18), D14 (19), D15 (20)
+BUS4         25    GET   6     CHAN1 (1), CHAN2 (2), CHAN3 (3), CHAN4 (4), D0 (5), D1 (6), D2 (7), D3 (8), D4 (9), D5 (10), D6 (11), D7 (12), D8 (13), D9 (14), D10 (15), D11 (16), D12 (17), D13 (18), D14 (19), D15 (20)
+BUS4         26    SET   6     NEGative (0), POSitive (1)
+BUS4         27    GET   6     NEG (0), POS (1)
+BUS4         28    SET   36    
+BUS4         29    GET   13    
+BUS4         30    SET   6     POSitive (0), NEGative (1)
+BUS4         31    GET   6     POS (0), NEG (1)
+BUS4         32    SET   6     LSB (0), MSB (1)
+BUS4         33    GET   6     LSB (0), MSB (1)
+BUS4         34    SET   6     5 (5), 6 (6), 7 (7), 8 (8), 9 (9)
+BUS4         35    GET   6     5 (5), 6 (6), 7 (7), 8 (8), 9 (9)
+BUS4         36    SET   6     1 (0), 1.5 (2), 2 (1)
+BUS4         37    GET   6     1 (0), 1.5 (2), 2 (1)
+BUS4         38    SET   6     NONE (0), ODD (1), EVEN (2)
+BUS4         39    GET   6     NONE (0), ODD (1), EVEN (2)
+BUS4         40    SET   6     NULL (0), LF (10), CR (13), SP (32)
+BUS4         41    GET   6     NULL (0), LF (10), CR (13), SP (32)
+BUS4         42    SET   6     NORMal (0), RW (1)
+BUS4         43    GET   6     NORM (0), RW (1)
+BUS4         44    SET   6     HIGH (1), LOW (0)
+BUS4         45    GET   6     HIGH (1), LOW (0)
+BUS4         46    SET   6     MSB (1), LSB (0)
+BUS4         47    GET   6     MSB (1), LSB (0)
+BUS4         48    SET   6     CS (0), TIMeout (1)
+BUS4         49    GET   6     CS (0), TIM (1)
+BUS4         50    SET   6     TX (3), RX (2), CANH (0), CANL (1), DIFFerential (4)
+BUS4         51    GET   6     TX (3), RX (2), CANH (0), CANL (1), DIFF (4)
+BUS4         52    SET   6     BP (0), BM (1), RT (2)
+BUS4         53    GET   6     BP (0), BM (1), RT (2)
+BUS4         54    SET   6     NOPARity (0), PARity (1)
+BUS4         55    GET   6     NOP (0), PAR (1)
+BUS4         56    SET   6     V1X (0), V2X (1), MIXed (2)
+BUS4         57    GET   6     V1X (0), V2X (1), MIX (2)
+BUS4         58    SET   6     IIS (0), LJ (1), RJ (2)
+BUS4         59    GET   6     IIS (0), LJ (1), RJ (2)
+BUS4         60    SET   6     NEGative (1), POSitive (0)
+BUS4         61    GET   6     NEG (1), POS (0)
+BUS4         62    SET   6     CHANnel1 (1), CHANnel2 (2), CHANnel3 (3), CHANnel4 (4)
+BUS4         63    GET   6     CHAN1 (1), CHAN2 (2), CHAN3 (3), CHAN4 (4)
+CALibration  0     SET   6     CHAN1 (1), CHAN2 (2), CHAN3 (3), CHAN4 (4)
+CALibration  1     GET   0     
+CALibration  2     GET   3     
+CALibration  3     SET   6     50_X2 (0), 50_X20 (1), 1M_X1 (2), 1M_X7 (3)
+CALibration  4     SET   0     
+CALibration  5     SET   10    
+CALibration  6     GET   10    
+CALibration  7     SET   3     
+CALibration  8     SET   6     dc (0), lf (1), mfc (2), hf (3)
+CALibration  9     SET   6     GGND (0), DDELay (1), MLF (3), CHDelay (2)
+CALibration  10    SET   5     
+CALibration  11    GET   5     
+CALibration  12    GET   4     
+CHANnel1     0     SET   6     OFF (1), 20M (2), 25M (3), 50M (4), 70M (5), 100M (6), 150M (7), 200M (8), 250M (9), 300M (10), 350M (11), 500M (12), 600M (13), 1G (15), 2G (16), 4G (17), 5G (18), 10G (19), 20G (20)
+CHANnel1     1     GET   6     OFF (1), 20M (2), 25M (3), 50M (4), 70M (5), 100M (6), 150M (7), 200M (8), 250M (9), 300M (10), 350M (11), 500M (12), 600M (13), 1G (15), 2G (16), 4G (17), 5G (18), 10G (19), 20G (20)
+CHANnel1     2     SET   6     DC (0), AC (1)
+CHANnel1     3     GET   6     DC (0), AC (1)
+CHANnel1     4     SET   3     
+CHANnel1     5     GET   3     
+CHANnel1     6     SET   10    
+CHANnel1     7     GET   10    
+CHANnel1     8     SET   6     WATT (1), AMPere (2), VOLTage (3), UNKNown (4)
+CHANnel1     9     GET   6     WATT (1), AMP (2), VOLT (3), UNKN (4)
+CHANnel1     10    SET   36    
+CHANnel1     11    GET   13    
+CHANnel1     12    SET   6     OMEG (0), FIFTy (1)
+CHANnel1     13    GET   6     OMEG (0), FIFT (1)
+CHANnel1     14    SET   34    
+CHANnel1     15    GET   15    
+CHANnel1     16    SET   6     0.01 (0), 0.02 (1), 0.05 (2), 0.1 (3), 0.2 (4), 0.5 (5), 1 (6), 2 (7), 5 (8), 10 (9), 20 (10), 50 (11), 100 (12), 200 (13), 500 (14), 1000 (15), 2000 (16), 5000 (17), 10000 (18), 20000 (19), 50000 (20)
+CHANnel1     17    GET   6     0.01 (0), 0.02 (1), 0.05 (2), 0.1 (3), 0.2 (4), 0.5 (5), 1 (6), 2 (7), 5 (8), 10 (9), 20 (10), 50 (11), 100 (12), 200 (13), 500 (14), 1000 (15), 2000 (16), 5000 (17), 10000 (18), 20000 (19), 50000 (20)
+CHANnel1     18    SET   6     BNC (0), RP1 (1), TP1 (128), KP1 (256), LP1 (512)
+CHANnel1     19    GET   6     BNC (0), RP1 (1), TP1 (128), KP1 (256), LP1 (512)
+CHANnel2     0     SET   6     OFF (1), 20M (2), 25M (3), 50M (4), 70M (5), 100M (6), 150M (7), 200M (8), 250M (9), 300M (10), 350M (11), 500M (12), 600M (13), 1G (15), 2G (16), 4G (17), 5G (18), 10G (19), 20G (20)
+CHANnel2     1     GET   6     OFF (1), 20M (2), 25M (3), 50M (4), 70M (5), 100M (6), 150M (7), 200M (8), 250M (9), 300M (10), 350M (11), 500M (12), 600M (13), 1G (15), 2G (16), 4G (17), 5G (18), 10G (19), 20G (20)
+CHANnel2     2     SET   6     DC (0), AC (1)
+CHANnel2     3     GET   6     DC (0), AC (1)
+CHANnel2     4     SET   3     
+CHANnel2     5     GET   3     
+CHANnel2     6     SET   10    
+CHANnel2     7     GET   10    
+CHANnel2     8     SET   6     WATT (1), AMPere (2), VOLTage (3), UNKNown (4)
+CHANnel2     9     GET   6     WATT (1), AMP (2), VOLT (3), UNKN (4)
+CHANnel2     10    SET   36    
+CHANnel2     11    GET   13    
+CHANnel2     12    SET   6     OMEG (0), FIFTy (1)
+CHANnel2     13    GET   6     OMEG (0), FIFT (1)
+CHANnel2     14    SET   34    
+CHANnel2     15    GET   15    
+CHANnel2     16    SET   6     0.01 (0), 0.02 (1), 0.05 (2), 0.1 (3), 0.2 (4), 0.5 (5), 1 (6), 2 (7), 5 (8), 10 (9), 20 (10), 50 (11), 100 (12), 200 (13), 500 (14), 1000 (15), 2000 (16), 5000 (17), 10000 (18), 20000 (19), 50000 (20)
+CHANnel2     17    GET   6     0.01 (0), 0.02 (1), 0.05 (2), 0.1 (3), 0.2 (4), 0.5 (5), 1 (6), 2 (7), 5 (8), 10 (9), 20 (10), 50 (11), 100 (12), 200 (13), 500 (14), 1000 (15), 2000 (16), 5000 (17), 10000 (18), 20000 (19), 50000 (20)
+CHANnel2     18    SET   6     BNC (0), RP1 (1), TP1 (128), KP1 (256), LP1 (512)
+CHANnel2     19    GET   6     BNC (0), RP1 (1), TP1 (128), KP1 (256), LP1 (512)
+CHANnel3     0     SET   6     OFF (1), 20M (2), 25M (3), 50M (4), 70M (5), 100M (6), 150M (7), 200M (8), 250M (9), 300M (10), 350M (11), 500M (12), 600M (13), 1G (15), 2G (16), 4G (17), 5G (18), 10G (19), 20G (20)
+CHANnel3     1     GET   6     OFF (1), 20M (2), 25M (3), 50M (4), 70M (5), 100M (6), 150M (7), 200M (8), 250M (9), 300M (10), 350M (11), 500M (12), 600M (13), 1G (15), 2G (16), 4G (17), 5G (18), 10G (19), 20G (20)
+CHANnel3     2     SET   6     DC (0), AC (1)
+CHANnel3     3     GET   6     DC (0), AC (1)
+CHANnel3     4     SET   3     
+CHANnel3     5     GET   3     
+CHANnel3     6     SET   10    
+CHANnel3     7     GET   10    
+CHANnel3     8     SET   6     WATT (1), AMPere (2), VOLTage (3), UNKNown (4)
+CHANnel3     9     GET   6     WATT (1), AMP (2), VOLT (3), UNKN (4)
+CHANnel3     10    SET   36    
+CHANnel3     11    GET   13    
+CHANnel3     12    SET   6     OMEG (0), FIFTy (1)
+CHANnel3     13    GET   6     OMEG (0), FIFT (1)
+CHANnel3     14    SET   34    
+CHANnel3     15    GET   15    
+CHANnel3     16    SET   6     0.01 (0), 0.02 (1), 0.05 (2), 0.1 (3), 0.2 (4), 0.5 (5), 1 (6), 2 (7), 5 (8), 10 (9), 20 (10), 50 (11), 100 (12), 200 (13), 500 (14), 1000 (15), 2000 (16), 5000 (17), 10000 (18), 20000 (19), 50000 (20)
+CHANnel3     17    GET   6     0.01 (0), 0.02 (1), 0.05 (2), 0.1 (3), 0.2 (4), 0.5 (5), 1 (6), 2 (7), 5 (8), 10 (9), 20 (10), 50 (11), 100 (12), 200 (13), 500 (14), 1000 (15), 2000 (16), 5000 (17), 10000 (18), 20000 (19), 50000 (20)
+CHANnel3     18    SET   6     BNC (0), RP1 (1), TP1 (128), KP1 (256), LP1 (512)
+CHANnel3     19    GET   6     BNC (0), RP1 (1), TP1 (128), KP1 (256), LP1 (512)
+CHANnel4     0     SET   6     OFF (1), 20M (2), 25M (3), 50M (4), 70M (5), 100M (6), 150M (7), 200M (8), 250M (9), 300M (10), 350M (11), 500M (12), 600M (13), 1G (15), 2G (16), 4G (17), 5G (18), 10G (19), 20G (20)
+CHANnel4     1     GET   6     OFF (1), 20M (2), 25M (3), 50M (4), 70M (5), 100M (6), 150M (7), 200M (8), 250M (9), 300M (10), 350M (11), 500M (12), 600M (13), 1G (15), 2G (16), 4G (17), 5G (18), 10G (19), 20G (20)
+CHANnel4     2     SET   6     DC (0), AC (1)
+CHANnel4     3     GET   6     DC (0), AC (1)
+CHANnel4     4     SET   3     
+CHANnel4     5     GET   3     
+CHANnel4     6     SET   10    
+CHANnel4     7     GET   10    
+CHANnel4     8     SET   6     WATT (1), AMPere (2), VOLTage (3), UNKNown (4)
+CHANnel4     9     GET   6     WATT (1), AMP (2), VOLT (3), UNKN (4)
+CHANnel4     10    SET   36    
+CHANnel4     11    GET   13    
+CHANnel4     12    SET   6     OMEG (0), FIFTy (1)
+CHANnel4     13    GET   6     OMEG (0), FIFT (1)
+CHANnel4     14    SET   34    
+CHANnel4     15    GET   15    
+CHANnel4     16    SET   6     0.01 (0), 0.02 (1), 0.05 (2), 0.1 (3), 0.2 (4), 0.5 (5), 1 (6), 2 (7), 5 (8), 10 (9), 20 (10), 50 (11), 100 (12), 200 (13), 500 (14), 1000 (15), 2000 (16), 5000 (17), 10000 (18), 20000 (19), 50000 (20)
+CHANnel4     17    GET   6     0.01 (0), 0.02 (1), 0.05 (2), 0.1 (3), 0.2 (4), 0.5 (5), 1 (6), 2 (7), 5 (8), 10 (9), 20 (10), 50 (11), 100 (12), 200 (13), 500 (14), 1000 (15), 2000 (16), 5000 (17), 10000 (18), 20000 (19), 50000 (20)
+CHANnel4     18    SET   6     BNC (0), RP1 (1), TP1 (128), KP1 (256), LP1 (512)
+CHANnel4     19    GET   6     BNC (0), RP1 (1), TP1 (128), KP1 (256), LP1 (512)
+COMMon       0     SET   0     
+COMMon       1     GET   0     
+COMMon       2     GET   4     
+COMMon       3     GET   3     
+COMMon       4     GET   255   
+COUNter      0     GET   4     
+COUNter      1     SET   3     
+COUNter      2     GET   3     
+COUNter      3     SET   6     CHANnel1 (1), CHANnel2 (2), CHANnel3 (3), CHANnel4 (4), D0 (5), D1 (6), D2 (7), D3 (8), D4 (9), D5 (10), D6 (11), D7 (12), D8 (13), D9 (14), D10 (15), D11 (16), D12 (17), D13 (18), D14 (19), D15 (20), EXT (22)
+COUNter      4     GET   6     CHAN1 (1), CHAN2 (2), CHAN3 (3), CHAN4 (4), D0 (5), D1 (6), D2 (7), D3 (8), D4 (9), D5 (10), D6 (11), D7 (12), D8 (13), D9 (14), D10 (15), D11 (16), D12 (17), D13 (18), D14 (19), D15 (20), EXT (22)
+COUNter      5     SET   6     FREQuency (1), PERiod (2), TOTalize (3)
+COUNter      6     GET   6     FREQ (1), PER (2), TOT (3)
+COUNter      7     SET   0     
+COUNter      8     GET   0     
+CURSor       0     SET   6     OFF (0), MANual (1), TRACk (2), XY (4)
+CURSor       1     GET   6     OFF (0), MAN (1), TRAC (2), XY (4)
+CURSor       2     SET   6     TIME (0), AMPLitude (1)
+CURSor       3     GET   6     TIME (0), AMPL (1)
+CURSor       4     SET   6     CHANnel1 (1), CHANnel2 (2), CHANnel3 (3), CHANnel4 (4), MATH1 (37), MATH2 (38), MATH3 (39), MATH4 (40), LA (79), NONE (0)
+CURSor       5     GET   6     CHAN1 (1), CHAN2 (2), CHAN3 (3), CHAN4 (4), MATH1 (37), MATH2 (38), MATH3 (39), MATH4 (40), LA (79), NONE (0)
+CURSor       6     SET   6     SECond (5), HZ (6), PERCent (8), DEGRee (7)
+CURSor       7     GET   6     SEC (5), HZ (6), PERC (8), DEGR (7)
+CURSor       8     SET   6     SOURce (2), PERCent (8)
+CURSor       9     GET   6     SOUR (2), PERC (8)
+CURSor       10    SET   0     
+CURSor       11    GET   0     
+CURSor       12    GET   80    
+CURSor       13    SET   6     CHANnel1 (1), CHANnel2 (2), CHANnel3 (3), CHANnel4 (4), MATH1 (37), MATH2 (38), MATH3 (39), MATH4 (40), NONE (0)
+CURSor       14    GET   6     CHAN1 (1), CHAN2 (2), CHAN3 (3), CHAN4 (4), MATH1 (37), MATH2 (38), MATH3 (39), MATH4 (40), NONE (0)
+DISPlay      0     SET   6     VECTors (0), DOTS (1)
+DISPlay      1     GET   6     VECT (0), DOTS (1)
+DISPlay      2     SET   6     MIN (0), 0.1 (1), 0.2 (2), 0.5 (3), 1 (4), 2 (5), 5 (6), 10 (7), INFinite (8)
+DISPlay      3     GET   6     MIN (0), 0.1 (1), 0.2 (2), 0.5 (3), 1 (4), 2 (5), 5 (6), 10 (7), INF (8)
+DISPlay      4     SET   0     
+DISPlay      5     GET   0     
+DISPlay      6     SET   6     FULL (0), HALF (1), NONE (2), IRE (3)
+DISPlay      7     GET   6     FULL (0), HALF (1), NONE (2), IRE (3)
+DISPlay      8     GET   83    
+DISPlay      9     SET   6     BMP (1), PNG (0), JPG (2), TIFF (3)
+DISPlay      10    GET   85    
+DISPlay      11    SET   6     PNG (0), JPG (2), TIFF (3)
+DISPlay      12    SET   3     
+DISPlay      13    GET   3     
+DVM          0     GET   15    
+DVM          1     SET   3     
+DVM          2     GET   3     
+DVM          3     SET   6     CHANnel1 (1), CHANnel2 (2), CHANnel3 (3), CHANnel4 (4)
+DVM          4     GET   6     CHAN1 (1), CHAN2 (2), CHAN3 (3), CHAN4 (4)
+DVM          5     SET   6     ACRMs (0), DC (1), DCRMs (2)
+DVM          6     GET   6     ACRM (0), DC (1), DCRM (2)
+HISTogram    0     SET   3     
+HISTogram    1     GET   3     
+HISTogram    2     SET   6     HORizontal (0), VERTical (1), MEAS (2), JITMeas (3)
+HISTogram    3     GET   6     HOR (0), VERT (1), MEAS (2), JITM (3)
+HISTogram    4     SET   6     CHANnel1 (1), CHANnel2 (2), CHANnel3 (3), CHANnel4 (4), OFF (0)
+HISTogram    5     GET   6     CHAN1 (1), CHAN2 (2), CHAN3 (3), CHAN4 (4), OFF (0)
+HISTogram    6     SET   0     
+HISTogram    7     GET   0     
+HISTogram    8     SET   34    
+HISTogram    9     GET   15    
+HISTogram    10    SET   36    
+HISTogram    11    GET   13    
+JITTer       0     SET   6     CHANnel1 (1), CHANnel2 (2), CHANnel3 (3), CHANnel4 (4)
+JITTer       1     GET   6     CHAN1 (1), CHAN2 (2), CHAN3 (3), CHAN4 (4)
+JITTer       2     SET   3     
+JITTer       3     GET   3     
+LA           0     SET   3     
+LA           1     GET   3     
+LA           2     SET   6     D0 (5), D1 (6), D2 (7), D3 (8), D4 (9), D5 (10), D6 (11), D7 (12), D8 (13), D9 (14), D10 (15), D11 (16), D12 (17), D13 (18), D14 (19), D15 (20), NONE (0)
+LA           3     GET   6     D0 (5), D1 (6), D2 (7), D3 (8), D4 (9), D5 (10), D6 (11), D7 (12), D8 (13), D9 (14), D10 (15), D11 (16), D12 (17), D13 (18), D14 (19), D15 (20), NONE (0)
+LA           4     SET   6     D0 (5), D1 (6), D2 (7), D3 (8), D4 (9), D5 (10), D6 (11), D7 (12), D8 (13), D9 (14), D10 (15), D11 (16), D12 (17), D13 (18), D14 (19), D15 (20), GROup1 (1), GROup2 (2), GROup3 (3), GROup4 (4), POD1 (24), POD2 (25)
+LA           5     SET   6     0 (0), 1 (1)
+LA           6     SET   6     GROup1 (129), GROup2 (130), GROup3 (131), GROup4 (132)
+LA           7     SET   6     SMALl (0), LARGe (2), MEDium (1)
+LA           8     GET   6     SMAL (0), LARG (2), MED (1)
+LA           9     SET   36    
+LA           10    GET   13    
+LA           11    SET   6     D0 (5), D1 (6), D2 (7), D3 (8), D4 (9), D5 (10), D6 (11), D7 (12), D8 (13), D9 (14), D10 (15), D11 (16), D12 (17), D13 (18), D14 (19), D15 (20)
+LA           12    SET   0     
+LA           13    GET   0     
+LA           14    SET   4     
+LA           15    GET   4     
+LA           16    SET   34    
+LA           17    GET   15    
+LA           18    SET   6     GROup1 (1), GROup2 (2), GROup3 (3), GROup4 (4)
+LAN          0     SET   3     
+LAN          1     GET   3     
+LAN          2     SET   4     
+LAN          3     GET   4     
+LAN          4     GET   6     UNLINK (0), CONNECTED (1), INIT (2), UNBOUND (3), IPCONFLICT (4), BUSY (5), CONFIGURED (6), DHCPFAILED (7), INVALIDIP (8), IPLOSE (9), SETMAC (10)
+LAN          5     SET   6     USB (0), LXI (1), SOCKET (2)
+LAN          6     SET   0     
+MASK         0     SET   3     
+MASK         1     GET   3     
+MASK         2     SET   6     CHAN1 (1), CHAN2 (2), CHAN3 (3), CHAN4 (4)
+MASK         3     GET   6     CHAN1 (1), CHAN2 (2), CHAN3 (3), CHAN4 (4)
+MASK         4     SET   6     RUN (1), STOP (0)
+MASK         5     GET   6     RUN (1), STOP (0)
+MASK         6     SET   32    
+MASK         7     GET   17    
+MASK         8     SET   6     FAIL (0), PASS (1), TOTal (2)
+MASK         9     GET   0     
+MASK         10    SET   0     
+MATH1        0     SET   3     
+MATH1        1     GET   3     
+MATH1        2     SET   6     ADD (0), SUBTract (1), MULTiply (2), DIVision (3), AND (4), OR (5), XOR (6), NOT (7), FFT (8), INTG (9), DIFF (10), SQRT (11), LOG (12), LN (13), EXP (14), ABS (15), LPASs (16), HPASs (17), BPASs (18), BSTOp (19), AXB (20)
+MATH1        3     GET   6     ADD (0), SUBT (1), MULT (2), DIV (3), AND (4), OR (5), XOR (6), NOT (7), FFT (8), INTG (9), DIFF (10), SQRT (11), LOG (12), LN (13), EXP (14), ABS (15), LPAS (16), HPAS (17), BPAS (18), BST (19), AXB (20)
+MATH1        4     SET   6     CHANnel1 (1), CHANnel2 (2), CHANnel3 (3), CHANnel4 (4), REF1 (27), REF2 (28), REF3 (29), REF4 (30), REF5 (31), REF6 (32), REF7 (33), REF8 (34), REF9 (35), REF10 (36)
+MATH1        5     GET   6     CHAN1 (1), CHAN2 (2), CHAN3 (3), CHAN4 (4), REF1 (27), REF2 (28), REF3 (29), REF4 (30), REF5 (31), REF6 (32), REF7 (33), REF8 (34), REF9 (35), REF10 (36)
+MATH1        6     SET   6     D0 (5), D1 (6), D2 (7), D3 (8), D4 (9), D5 (10), D6 (11), D7 (12), D8 (13), D9 (14), D10 (15), D11 (16), D12 (17), D13 (18), D14 (19), D15 (20), CHANnel1 (1), CHANnel2 (2), CHANnel3 (3), CHANnel4 (4)
+MATH1        7     GET   6     D0 (5), D1 (6), D2 (7), D3 (8), D4 (9), D5 (10), D6 (11), D7 (12), D8 (13), D9 (14), D10 (15), D11 (16), D12 (17), D13 (18), D14 (19), D15 (20), CHAN1 (1), CHAN2 (2), CHAN3 (3), CHAN4 (4)
+MATH1        8     SET   35    
+MATH1        9     GET   14    
+MATH1        10    SET   6     CHANnel1 (1), CHANnel2 (2), CHANnel3 (3), CHANnel4 (4)
+MATH1        11    GET   6     CHAN1 (1), CHAN2 (2), CHAN3 (3), CHAN4 (4)
+MATH1        12    SET   6     RECTangle (0), BLACkman (1), HANNing (2), HAMMing (3), FLATtop (4), TRIangle (5)
+MATH1        13    GET   6     RECT (0), BLAC (1), HANN (2), HAMM (3), FLAT (4), TRI (5)
+MATH1        14    SET   6     VRMS (0), DB (1)
+MATH1        15    GET   6     VRMS (0), DB (1)
+MATH1        16    SET   34    
+MATH1        17    GET   15    
+MATH1        18    SET   0     
+MATH1        19    GET   0     
+MATH1        20    SET   6     AMPorder (0), FREQorder (1)
+MATH1        21    GET   6     AMP (0), FREQ (1)
+MATH1        22    GET   81    
+MATH1        23    SET   6     LPASs (16), HPASs (17), BPASs (18), BSTop (19)
+MATH1        24    GET   6     LPAS (16), HPAS (17), BPAS (18), BST (19)
+MATH1        25    SET   31    
+MATH1        26    GET   18    
+MATH2        0     SET   3     
+MATH2        1     GET   3     
+MATH2        2     SET   6     ADD (0), SUBTract (1), MULTiply (2), DIVision (3), AND (4), OR (5), XOR (6), NOT (7), FFT (8), INTG (9), DIFF (10), SQRT (11), LOG (12), LN (13), EXP (14), ABS (15), LPASs (16), HPASs (17), BPASs (18), BSTOp (19), AXB (20)
+MATH2        3     GET   6     ADD (0), SUBT (1), MULT (2), DIV (3), AND (4), OR (5), XOR (6), NOT (7), FFT (8), INTG (9), DIFF (10), SQRT (11), LOG (12), LN (13), EXP (14), ABS (15), LPAS (16), HPAS (17), BPAS (18), BST (19), AXB (20)
+MATH2        4     SET   6     CHANnel1 (1), CHANnel2 (2), CHANnel3 (3), CHANnel4 (4), REF1 (27), REF2 (28), REF3 (29), REF4 (30), REF5 (31), REF6 (32), REF7 (33), REF8 (34), REF9 (35), REF10 (36), MATH1 (37)
+MATH2        5     GET   6     CHAN1 (1), CHAN2 (2), CHAN3 (3), CHAN4 (4), REF1 (27), REF2 (28), REF3 (29), REF4 (30), REF5 (31), REF6 (32), REF7 (33), REF8 (34), REF9 (35), REF10 (36), MATH1 (37)
+MATH2        6     SET   6     D0 (5), D1 (6), D2 (7), D3 (8), D4 (9), D5 (10), D6 (11), D7 (12), D8 (13), D9 (14), D10 (15), D11 (16), D12 (17), D13 (18), D14 (19), D15 (20), CHANnel1 (1), CHANnel2 (2), CHANnel3 (3), CHANnel4 (4)
+MATH2        7     GET   6     D0 (5), D1 (6), D2 (7), D3 (8), D4 (9), D5 (10), D6 (11), D7 (12), D8 (13), D9 (14), D10 (15), D11 (16), D12 (17), D13 (18), D14 (19), D15 (20), CHAN1 (1), CHAN2 (2), CHAN3 (3), CHAN4 (4)
+MATH2        8     SET   35    
+MATH2        9     GET   14    
+MATH2        10    SET   6     CHANnel1 (1), CHANnel2 (2), CHANnel3 (3), CHANnel4 (4)
+MATH2        11    GET   6     CHAN1 (1), CHAN2 (2), CHAN3 (3), CHAN4 (4)
+MATH2        12    SET   6     RECTangle (0), BLACkman (1), HANNing (2), HAMMing (3), FLATtop (4), TRIangle (5)
+MATH2        13    GET   6     RECT (0), BLAC (1), HANN (2), HAMM (3), FLAT (4), TRI (5)
+MATH2        14    SET   6     VRMS (0), DB (1)
+MATH2        15    GET   6     VRMS (0), DB (1)
+MATH2        16    SET   34    
+MATH2        17    GET   15    
+MATH2        18    SET   0     
+MATH2        19    GET   0     
+MATH2        20    SET   6     AMPorder (0), FREQorder (1)
+MATH2        21    GET   6     AMP (0), FREQ (1)
+MATH2        22    GET   81    
+MATH2        23    SET   6     LPASs (16), HPASs (17), BPASs (18), BSTop (19)
+MATH2        24    GET   6     LPAS (16), HPAS (17), BPAS (18), BST (19)
+MATH2        25    SET   31    
+MATH2        26    GET   18    
+MATH3        0     SET   3     
+MATH3        1     GET   3     
+MATH3        2     SET   6     ADD (0), SUBTract (1), MULTiply (2), DIVision (3), AND (4), OR (5), XOR (6), NOT (7), FFT (8), INTG (9), DIFF (10), SQRT (11), LOG (12), LN (13), EXP (14), ABS (15), LPASs (16), HPASs (17), BPASs (18), BSTOp (19), AXB (20)
+MATH3        3     GET   6     ADD (0), SUBT (1), MULT (2), DIV (3), AND (4), OR (5), XOR (6), NOT (7), FFT (8), INTG (9), DIFF (10), SQRT (11), LOG (12), LN (13), EXP (14), ABS (15), LPAS (16), HPAS (17), BPAS (18), BST (19), AXB (20)
+MATH3        4     SET   6     CHANnel1 (1), CHANnel2 (2), CHANnel3 (3), CHANnel4 (4), REF1 (27), REF2 (28), REF3 (29), REF4 (30), REF5 (31), REF6 (32), REF7 (33), REF8 (34), REF9 (35), REF10 (36), MATH1 (37), MATH2 (38)
+MATH3        5     GET   6     CHAN1 (1), CHAN2 (2), CHAN3 (3), CHAN4 (4), REF1 (27), REF2 (28), REF3 (29), REF4 (30), REF5 (31), REF6 (32), REF7 (33), REF8 (34), REF9 (35), REF10 (36), MATH1 (37), MATH2 (38)
+MATH3        6     SET   6     D0 (5), D1 (6), D2 (7), D3 (8), D4 (9), D5 (10), D6 (11), D7 (12), D8 (13), D9 (14), D10 (15), D11 (16), D12 (17), D13 (18), D14 (19), D15 (20), CHANnel1 (1), CHANnel2 (2), CHANnel3 (3), CHANnel4 (4)
+MATH3        7     GET   6     D0 (5), D1 (6), D2 (7), D3 (8), D4 (9), D5 (10), D6 (11), D7 (12), D8 (13), D9 (14), D10 (15), D11 (16), D12 (17), D13 (18), D14 (19), D15 (20), CHAN1 (1), CHAN2 (2), CHAN3 (3), CHAN4 (4)
+MATH3        8     SET   35    
+MATH3        9     GET   14    
+MATH3        10    SET   6     CHANnel1 (1), CHANnel2 (2), CHANnel3 (3), CHANnel4 (4)
+MATH3        11    GET   6     CHAN1 (1), CHAN2 (2), CHAN3 (3), CHAN4 (4)
+MATH3        12    SET   6     RECTangle (0), BLACkman (1), HANNing (2), HAMMing (3), FLATtop (4), TRIangle (5)
+MATH3        13    GET   6     RECT (0), BLAC (1), HANN (2), HAMM (3), FLAT (4), TRI (5)
+MATH3        14    SET   6     VRMS (0), DB (1)
+MATH3        15    GET   6     VRMS (0), DB (1)
+MATH3        16    SET   34    
+MATH3        17    GET   15    
+MATH3        18    SET   0     
+MATH3        19    GET   0     
+MATH3        20    SET   6     AMPorder (0), FREQorder (1)
+MATH3        21    GET   6     AMP (0), FREQ (1)
+MATH3        22    GET   81    
+MATH3        23    SET   6     LPASs (16), HPASs (17), BPASs (18), BSTop (19)
+MATH3        24    GET   6     LPAS (16), HPAS (17), BPAS (18), BST (19)
+MATH3        25    SET   31    
+MATH3        26    GET   18    
+MATH4        0     SET   3     
+MATH4        1     GET   3     
+MATH4        2     SET   6     ADD (0), SUBTract (1), MULTiply (2), DIVision (3), AND (4), OR (5), XOR (6), NOT (7), FFT (8), INTG (9), DIFF (10), SQRT (11), LOG (12), LN (13), EXP (14), ABS (15), LPASs (16), HPASs (17), BPASs (18), BSTOp (19), AXB (20)
+MATH4        3     GET   6     ADD (0), SUBT (1), MULT (2), DIV (3), AND (4), OR (5), XOR (6), NOT (7), FFT (8), INTG (9), DIFF (10), SQRT (11), LOG (12), LN (13), EXP (14), ABS (15), LPAS (16), HPAS (17), BPAS (18), BST (19), AXB (20)
+MATH4        4     SET   6     CHANnel1 (1), CHANnel2 (2), CHANnel3 (3), CHANnel4 (4), REF1 (27), REF2 (28), REF3 (29), REF4 (30), REF5 (31), REF6 (32), REF7 (33), REF8 (34), REF9 (35), REF10 (36), MATH1 (37), MATH2 (38), MATH3 (39)
+MATH4        5     GET   6     CHAN1 (1), CHAN2 (2), CHAN3 (3), CHAN4 (4), REF1 (27), REF2 (28), REF3 (29), REF4 (30), REF5 (31), REF6 (32), REF7 (33), REF8 (34), REF9 (35), REF10 (36), MATH1 (37), MATH2 (38), MATH3 (39)
+MATH4        6     SET   6     D0 (5), D1 (6), D2 (7), D3 (8), D4 (9), D5 (10), D6 (11), D7 (12), D8 (13), D9 (14), D10 (15), D11 (16), D12 (17), D13 (18), D14 (19), D15 (20), CHANnel1 (1), CHANnel2 (2), CHANnel3 (3), CHANnel4 (4)
+MATH4        7     GET   6     D0 (5), D1 (6), D2 (7), D3 (8), D4 (9), D5 (10), D6 (11), D7 (12), D8 (13), D9 (14), D10 (15), D11 (16), D12 (17), D13 (18), D14 (19), D15 (20), CHAN1 (1), CHAN2 (2), CHAN3 (3), CHAN4 (4)
+MATH4        8     SET   35    
+MATH4        9     GET   14    
+MATH4        10    SET   6     CHANnel1 (1), CHANnel2 (2), CHANnel3 (3), CHANnel4 (4)
+MATH4        11    GET   6     CHAN1 (1), CHAN2 (2), CHAN3 (3), CHAN4 (4)
+MATH4        12    SET   6     RECTangle (0), BLACkman (1), HANNing (2), HAMMing (3), FLATtop (4), TRIangle (5)
+MATH4        13    GET   6     RECT (0), BLAC (1), HANN (2), HAMM (3), FLAT (4), TRI (5)
+MATH4        14    SET   6     VRMS (0), DB (1)
+MATH4        15    GET   6     VRMS (0), DB (1)
+MATH4        16    SET   34    
+MATH4        17    GET   15    
+MATH4        18    SET   0     
+MATH4        19    GET   0     
+MATH4        20    SET   6     AMPorder (0), FREQorder (1)
+MATH4        21    GET   6     AMP (0), FREQ (1)
+MATH4        22    GET   81    
+MATH4        23    SET   6     LPASs (16), HPASs (17), BPASs (18), BSTop (19)
+MATH4        24    GET   6     LPAS (16), HPAS (17), BPAS (18), BST (19)
+MATH4        25    SET   31    
+MATH4        26    GET   18    
+MEASure      0     SET   6     CHANnel1 (1), CHANnel2 (2), CHANnel3 (3), CHANnel4 (4), D0 (5), D1 (6), D2 (7), D3 (8), D4 (9), D5 (10), D6 (11), D7 (12), D8 (13), D9 (14), D10 (15), D11 (16), D12 (17), D13 (18), D14 (19), D15 (20), MATH1 (37), MATH2 (38), MATH3 (39), MATH4 (40)
+MEASure      1     GET   6     CHAN1 (1), CHAN2 (2), CHAN3 (3), CHAN4 (4), D0 (5), D1 (6), D2 (7), D3 (8), D4 (9), D5 (10), D6 (11), D7 (12), D8 (13), D9 (14), D10 (15), D11 (16), D12 (17), D13 (18), D14 (19), D15 (20), MATH1 (37), MATH2 (38), MATH3 (39), MATH4 (40)
+MEASure      2     SET   3     
+MEASure      3     GET   3     
+MEASure      4     SET   6     CHANnel1 (1), CHANnel2 (2), CHANnel3 (3), CHANnel4 (4), D0 (5), D1 (6), D2 (7), D3 (8), D4 (9), D5 (10), D6 (11), D7 (12), D8 (13), D9 (14), D10 (15), D11 (16), D12 (17), D13 (18), D14 (19), D15 (20), EXT (22)
+MEASure      5     GET   6     CHAN1 (1), CHAN2 (2), CHAN3 (3), CHAN4 (4), D0 (5), D1 (6), D2 (7), D3 (8), D4 (9), D5 (10), D6 (11), D7 (12), D8 (13), D9 (14), D10 (15), D11 (16), D12 (17), D13 (18), D14 (19), D15 (20), EXT (22)
+MEASure      6     GET   4     
+MEASure      7     SET   6     ITEM1 (0), ITEM2 (1), ITEM3 (2), ITEM4 (3), ITEM5 (4), ITEM6 (5), ITEM7 (6), ITEM8 (7), ITEM9 (8), ITEM10 (9), ALL (10)
+MEASure      8     SET   6     OFF (0), CHANnel1 (1), CHANnel2 (2), CHANnel3 (3), CHANnel4 (4)
+MEASure      9     GET   6     OFF (0), CHAN1 (1), CHAN2 (2), CHAN3 (3), CHAN4 (4)
+MEASure      10    SET   6     VMAX (30), VMIN (31), VPP (32), VTOP (33), VBASe (34), VAMP (35), VAVG (39), VRMS (40), OVERshoot (42), PREShoot (43), MARea (44), MPARea (45), PERiod (0), FREQuency (1), RTIMe (2), FTIMe (3), PWIDth (4), NWIDth (5), PDUTy (6), NDUTy (7), TVMax (12), TVMin (13), PSLewrate (14), NSLewrate (15), VUPPer (36), VMID (37), VLOWer (38), VARiance (46), PVRMs (41), PPULses (8), NPULses (9), PEDGes (10), NEDGes (11), RRDelay (20), RFDelay (21), FRDelay (22), FFDelay (23), RRPHase (24), RFPHase (25), FRPHase (26), FFPHase (27)
+MEASure      11    GET   84    
+MEASure      12    SET   6     MAXimum (0), MINimum (1), CURRent (2), AVERages (3), SDEViation (4)
+MEASure      13    SET   7     
+MEASure      14    GET   0     
+MEASure      15    SET   6     CHANnel1 (1), CHANnel2 (2), CHANnel3 (3), CHANnel4 (4), MATH1 (37), MATH2 (38), MATH3 (39), MATH4 (40)
+MEASure      16    SET   6     NORMal (0), PRECision (1)
+MEASure      17    GET   6     NORM (0), PREC (1)
+MEASure      18    SET   6     MAIN (0), ZOOM (1), CURSor (2)
+MEASure      19    GET   6     MAIN (0), ZOOM (1), CURS (2)
+MEASure      20    SET   6     THReshold (1), RANGe (2), AMPMethod (3)
+MEASure      21    GET   6     THR (1), RANG (2), AMPM (3)
+MEASure      22    SET   0     
+MEASure      23    GET   2     
+POWer        0     SET   6     QUALity (0), RIPPle (1)
+POWer        1     GET   6     QUAL (0), RIPP (1)
+POWer        2     SET   6     CHANnel1 (1), CHANnel2 (2), CHANnel3 (3), CHANnel4 (4)
+POWer        3     GET   6     CHAN1 (1), CHAN2 (2), CHAN3 (3), CHAN4 (4)
+POWer        4     SET   6     ABSolute (1), PERCent (0)
+POWer        5     GET   6     ABS (1), PERC (0)
+POWer        6     SET   34    
+POWer        7     GET   15    
+POWer        8     SET   0     
+POWer        9     GET   0     
+POWer        10    SET   3     
+POWer        11    GET   3     
+POWer        12    SET   6     VOLTage (0), CURRent (1)
+POWer        13    GET   6     VOLT (0), CURR (1)
+QUICk        0     SET   6     SIMage (0), SWAVe (1), SSETup (2), AMEasure (6), SRESet (7)
+QUICk        1     GET   6     SIM (0), SWAV (1), SSET (2), AME (6), SRES (7)
+RECord       0     SET   3     
+RECord       1     GET   3     
+RECord       2     SET   0     
+RECord       3     GET   0     
+REF          0     SET   3     
+REF          1     GET   3     
+REF          2     SET   0     
+REF          3     SET   6     CHANnel1 (1), CHANnel2 (2), CHANnel3 (3), CHANnel4 (4), MATH1 (37), MATH2 (38), MATH3 (39), MATH4 (40), D0 (5), D1 (6), D2 (7), D3 (8), D4 (9), D5 (10), D6 (11), D7 (12), D8 (13), D9 (14), D10 (15), D11 (16), D12 (17), D13 (18), D14 (19), D15 (20)
+REF          4     GET   6     CHAN1 (1), CHAN2 (2), CHAN3 (3), CHAN4 (4), MATH1 (37), MATH2 (38), MATH3 (39), MATH4 (40), D0 (5), D1 (6), D2 (7), D3 (8), D4 (9), D5 (10), D6 (11), D7 (12), D8 (13), D9 (14), D10 (15), D11 (16), D12 (17), D13 (18), D14 (19), D15 (20)
+REF          5     SET   34    
+REF          6     GET   15    
+REF          7     SET   6     GRAY (0), GREEn (1), BLUe (2), RED (3), ORANge (4)
+REF          8     GET   6     GRAY (0), GREE (1), BLUE (2), RED (3), ORAN (4)
+REF          9     SET   4     
+REF          10    GET   4     
+SAVE         0     SET   4     
+SAVE         1     SET   3     
+SAVE         2     GET   3     
+SAVE         3     SET   6     DISPlay (0), MAXimum (1)
+SAVE         4     GET   6     DISP (0), MAX (1)
+SAVE         5     SET   6     TRACe (1), WAVeform (2), SETup (3), PICTure (4), CSV (5)
+SAVE         6     GET   6     TRAC (1), WAV (2), SET (3), PICT (4), CSV (5)
+SAVE         7     SET   6     BMP24 (1), PNG (0), JPEG (2), TIFF (3)
+SAVE         8     GET   6     BMP24 (1), PNG (0), JPEG (2), TIFF (3)
+SAVE         9     SET   6     COLor (0), GRAY (1)
+SAVE         10    GET   6     COL (0), GRAY (1)
+SAVE         11    GET   0     
+SEARch       0     SET   3     
+SEARch       1     GET   3     
+SEARch       2     SET   6     EDGE (0), PULSe (1), RUNT (2), SLOPe (3)
+SEARch       3     GET   6     EDGE (0), PULS (1), RUNT (2), SLOP (3)
+SEARch       4     SET   0     
+SEARch       5     GET   0     
+SEARch       6     GET   13    
+SEARch       7     SET   6     NEGative (1), POSitive (0), EITHer (3)
+SEARch       8     GET   6     NEG (1), POS (0), EITH (3)
+SEARch       9     SET   6     CHANnel1 (1), CHANnel2 (2), CHANnel3 (3), CHANnel4 (4)
+SEARch       10    GET   6     CHAN1 (1), CHAN2 (2), CHAN3 (3), CHAN4 (4)
+SEARch       11    SET   34    
+SEARch       12    GET   15    
+SEARch       13    SET   6     POSitive (0), NEGative (1)
+SEARch       14    GET   6     POS (0), NEG (1)
+SEARch       15    SET   6     NONE (0), GREater (1), LESS (2), GLESs (3)
+SEARch       16    GET   6     NONE (0), GRE (1), LESS (2), GLES (3)
+SEARch       17    SET   36    
+SEARch       18    SET   6     GREater (1), LESS (2), GLESs (3)
+SEARch       19    GET   6     GRE (1), LESS (2), GLES (3)
+SOURce       0     SET   34    
+SOURce       1     GET   15    
+SOURce       2     SET   31    
+SOURce       3     GET   18    
+SOURce       4     SET   6     SINusoid (0), SQUare (1), RAMP (2), PULSe (3), NOISe (5), DC (4), SINC (6), EXPRise (7), EXPFall (8), ECG (9), GAUSs (10), LORentz (11), HAVersine (12), ARBitrary (13)
+SOURce       5     GET   6     SIN (0), SQU (1), RAMP (2), PULS (3), NOIS (5), DC (4), SINC (6), EXPR (7), EXPF (8), ECG (9), GAUS (10), LOR (11), HAV (12), ARB (13)
+SOURce       6     SET   6     AM (0), FM (1), FSK (2)
+SOURce       7     GET   6     AM (0), FM (1), FSK (2)
+SOURce       8     SET   0     
+SOURce       9     GET   0     
+SOURce       10    SET   6     SINusoid (0), SQUare (1), RAMP (2), NOISe (3)
+SOURce       11    GET   6     SIN (0), SQU (1), RAMP (2), NOIS (3)
+SOURce       12    SET   6     LINear (0), LOG (1), STEP (2)
+SOURce       13    GET   6     LIN (0), LOG (1), STEP (2)
+SOURce       14    SET   36    
+SOURce       15    GET   13    
+SOURce       16    SET   6     NCYCle (0), INFinite (1)
+SOURce       17    GET   6     NCYC (0), INF (1)
+SOURce       18    GET   6     SIN (0), SQU (1), RAMP (2), PULS (3), DC (4), NOIS (5), USER (13)
+SOURce       19    GET   4     
+SOURce       20    SET   3     
+SOURce       21    GET   3     
+SOURce       22    SET   6     OMEG (0), FIFTy (1)
+SOURce       23    GET   6     OMEG (0), FIFT (1)
+SOURce1      0     SET   34    
+SOURce1      1     GET   15    
+SOURce1      2     SET   31    
+SOURce1      3     GET   18    
+SOURce1      4     SET   6     SINusoid (0), SQUare (1), RAMP (2), PULSe (3), NOISe (5), DC (4), SINC (6), EXPRise (7), EXPFall (8), ECG (9), GAUSs (10), LORentz (11), HAVersine (12), ARBitrary (13)
+SOURce1      5     GET   6     SIN (0), SQU (1), RAMP (2), PULS (3), NOIS (5), DC (4), SINC (6), EXPR (7), EXPF (8), ECG (9), GAUS (10), LOR (11), HAV (12), ARB (13)
+SOURce1      6     SET   6     AM (0), FM (1), FSK (2)
+SOURce1      7     GET   6     AM (0), FM (1), FSK (2)
+SOURce1      8     SET   0     
+SOURce1      9     GET   0     
+SOURce1      10    SET   6     SINusoid (0), SQUare (1), RAMP (2), NOISe (3)
+SOURce1      11    GET   6     SIN (0), SQU (1), RAMP (2), NOIS (3)
+SOURce1      12    SET   6     LINear (0), LOG (1), STEP (2)
+SOURce1      13    GET   6     LIN (0), LOG (1), STEP (2)
+SOURce1      14    SET   36    
+SOURce1      15    GET   13    
+SOURce1      16    SET   6     NCYCle (0), INFinite (1)
+SOURce1      17    GET   6     NCYC (0), INF (1)
+SOURce1      18    GET   6     SIN (0), SQU (1), RAMP (2), PULS (3), DC (4), NOIS (5), USER (13)
+SOURce1      19    GET   4     
+SOURce1      20    SET   3     
+SOURce1      21    GET   3     
+SOURce1      22    SET   6     OMEG (0), FIFTy (1)
+SOURce1      23    GET   6     OMEG (0), FIFT (1)
+SOURce2      0     SET   34    
+SOURce2      1     GET   15    
+SOURce2      2     SET   31    
+SOURce2      3     GET   18    
+SOURce2      4     SET   6     SINusoid (0), SQUare (1), RAMP (2), PULSe (3), NOISe (5), DC (4), SINC (6), EXPRise (7), EXPFall (8), ECG (9), GAUSs (10), LORentz (11), HAVersine (12), ARBitrary (13)
+SOURce2      5     GET   6     SIN (0), SQU (1), RAMP (2), PULS (3), NOIS (5), DC (4), SINC (6), EXPR (7), EXPF (8), ECG (9), GAUS (10), LOR (11), HAV (12), ARB (13)
+SOURce2      6     SET   6     AM (0), FM (1), FSK (2)
+SOURce2      7     GET   6     AM (0), FM (1), FSK (2)
+SOURce2      8     SET   0     
+SOURce2      9     GET   0     
+SOURce2      10    SET   6     SINusoid (0), SQUare (1), RAMP (2), NOISe (3)
+SOURce2      11    GET   6     SIN (0), SQU (1), RAMP (2), NOIS (3)
+SOURce2      12    SET   6     LINear (0), LOG (1), STEP (2)
+SOURce2      13    GET   6     LIN (0), LOG (1), STEP (2)
+SOURce2      14    SET   36    
+SOURce2      15    GET   13    
+SOURce2      16    SET   6     NCYCle (0), INFinite (1)
+SOURce2      17    GET   6     NCYC (0), INF (1)
+SOURce2      18    GET   6     SIN (0), SQU (1), RAMP (2), PULS (3), DC (4), NOIS (5), USER (13)
+SOURce2      19    GET   4     
+SOURce2      20    SET   3     
+SOURce2      21    GET   3     
+SOURce2      22    SET   6     OMEG (0), FIFTy (1)
+SOURce2      23    GET   6     OMEG (0), FIFT (1)
+SYSTem       0     SET   6     TOUT (0), PFAil (1)
+SYSTem       1     GET   6     TOUT (0), PFA (1)
+SYSTem       2     SET   3     
+SYSTem       3     GET   3     
+SYSTem       4     SET   0     
+SYSTem       5     GET   0     
+SYSTem       6     SET   6     CH1 (0), CH2 (1), CH3 (2), CH4 (3), MATH (4), REF (5), LA (6), DECode (7), MOFF (8), F1 (9), F2 (10), F3 (11), F4 (12), F5 (13), F6 (14), F7 (15), NPRevious (16), NNEXt (17), NSTop (18), VOFFset1 (19), VOFFset2 (20), VOFFset3 (21), VOFFset4 (22), VSCale1 (23), VSCale2 (24), VSCale3 (25), VSCale4 (26), HSCale (27), HPOSition (28), KFUNction (29), TLEVel (30), TMENu (31), TMODe (32), DEFault (53), CLEar (34), AUTO (35), RSTop (36), SINGle (37), QUICk (38), MEASure (39), ACQuire (40), STORage (41), CURSor (42), DISPlay (43), UTILity (44), FORCe (33), GENerator1 (45), GENerator2 (46), BACK (47), TOUCh (48), ZOOM (49), SEARch (50), WSCale (51), WPOSition (52)
+SYSTem       7     SET   6     VOFFset1 (19), VOFFset2 (20), VOFFset3 (21), VOFFset4 (22), VSCale1 (23), VSCale2 (24), VSCale3 (25), VSCale4 (26), HSCale (27), HPOSition (28), KFUNction (29), TLEVel (30), WVOLt (51), WPOSition (52)
+SYSTem       8     SET   6     SCHinese (1), TCHinese (2), KORean (6), JAPanese (7), ENGLish (0), GERMan (4), PORTuguese (3), POLish (5), FRENch (8), RUSSian (9), SPAN (10)
+SYSTem       9     GET   6     SCH (1), TCH (2), KOR (6), JAP (7), ENGL (0), GERM (4), PORT (3), POL (5), FREN (8), RUSS (9), SPAN (10)
+SYSTem       10    SET   4     
+SYSTem       11    SET   6     BW071 (26), BW072 (27), BW073 (28), BW12 (0), BW13 (1), BW15 (2), BW23 (3), BW25 (4), BW35 (5), BW610 (31), BW620 (32), BW1020 (33), MSO (6), RL2 (7), RL5 (8), BND (9), COMP (10), EMBD (11), AUTO (12), AUDio (14), SENSor (15), AERO (16), ARINc (17), AWG (18), JITTer (19), MASK (20), PWR (21), DVM (22), CTR (23), EDK (24), 4CH (25)
+SYSTem       12    GET   4     
+SYSTem       13    SET   5     
+SYSTem       14    SET   6     DEFault (0), LATest (1)
+SYSTem       15    GET   6     DEF (0), LAT (1)
+SYSTem       16    SET   6     DEFault (0), OPEN (1)
+SYSTem       17    GET   6     DEF (0), OPEN (1)
+SYSTem       18    GET   2     
+SYSTem       19    SET   6     FULL (0), OFF (1), 20M (2), 25M (3), 50M (4), 70M (5), 100M (6), 150M (7), 200M (8), 250M (9), 300M (10), 350M (11), 500M (12), 600M (13), 750M (14), 1000M (15), 2000M (16), 4000M (17), 1G (15), 2G (16), 4G (17), 5G (18), 10G (19), 20G (20)
+SYSTem       20    GET   6     FULL (0), OFF (1), 20M (2), 25M (3), 50M (4), 70M (5), 100M (6), 150M (7), 200M (8), 250M (9), 300M (10), 350M (11), 500M (12), 600M (13), 750M (14), 1000M (15), 2000M (16), 4000M (17), 5G (18), 10G (19), 20G (20)
+SYSTem       21    SET   6     OFF (1), COUTput (3), CINPut (0)
+SYSTem       22    GET   6     OFF (1), COUTput (3), CINPut (0)
+SYSTem       23    SET   6     1 (1), 2 (2), 4 (4), 6 (6), 8 (8), 10 (10), 11 (11), 12 (12), 13 (13), 14 (14), 15 (15), 16 (16), 17 (17)
+SYSTem       24    GET   5     
+TIMebase     0     SET   3     
+TIMebase     1     GET   3     
+TIMebase     2     SET   36    
+TIMebase     3     GET   13    
+TIMebase     4     SET   6     MAIN (0), XY (1), ROLL (2)
+TIMebase     5     GET   6     MAIN (0), XY (1), ROLL (2)
+TIMebase     6     SET   6     CENTer (0), LB (1), RB (2), TRIG (3), USER (4)
+TIMebase     7     GET   6     CENT (0), LB (1), RB (2), TRIG (3), USER (4)
+TIMebase     8     SET   0     
+TIMebase     9     GET   0     
+TIMebase     10    SET   6     STOP (0), RUN (1), SINGle (2)
+TRIGger      0     SET   6     EDGE (0), PULSe (1), SLOPe (2), VIDeo (3), PATTern (4), DURation (5), TIMeout (6), RUNT (7), WINDow (8), DELay (10), SETup (11), NEDGe (12), RS232 (13), IIC (14), SPI (15), CAN (16), FLEXray (18), LIN (19), IIS (20), M1553 (22)
+TRIGger      1     GET   6     EDGE (0), PULS (1), SLOP (2), VID (3), PATT (4), DUR (5), TIM (6), RUNT (7), WIND (8), DEL (10), SET (11), NEDG (12), RS232 (13), IIC (14), SPI (15), CAN (16), FLEX (18), LIN (19), IIS (20), M1553 (22)
+TRIGger      2     SET   6     AC (1), DC (0), LFReject (3), HFReject (4)
+TRIGger      3     GET   6     AC (1), DC (0), LFR (3), HFR (4)
+TRIGger      4     GET   6     TD (4), WAIT (3), RUN (1), AUTO (2), STOP (0)
+TRIGger      5     SET   6     AUTO (0), NORMal (1), SINGle (2)
+TRIGger      6     GET   6     AUTO (0), NORM (1), SING (2)
+TRIGger      7     SET   36    
+TRIGger      8     GET   13    
+TRIGger      9     SET   3     
+TRIGger      10    GET   3     
+TRIGger      11    GET   2     
+TRIGger      12    SET   6     CHANnel1 (1), CHANnel2 (2), CHANnel3 (3), CHANnel4 (4), D0 (5), D1 (6), D2 (7), D3 (8), D4 (9), D5 (10), D6 (11), D7 (12), D8 (13), D9 (14), D10 (15), D11 (16), D12 (17), D13 (18), D14 (19), D15 (20), ACLine (21), EXT (22)
+TRIGger      13    GET   6     CHAN1 (1), CHAN2 (2), CHAN3 (3), CHAN4 (4), D0 (5), D1 (6), D2 (7), D3 (8), D4 (9), D5 (10), D6 (11), D7 (12), D8 (13), D9 (14), D10 (15), D11 (16), D12 (17), D13 (18), D14 (19), D15 (20), ACL (21), EXT (22)
+TRIGger      14    SET   6     POSitive (0), NEGative (1), RFALl (3)
+TRIGger      15    GET   6     POS (0), NEG (1), RFAL (3)
+TRIGger      16    SET   34    
+TRIGger      17    GET   15    
+TRIGger      18    SET   6     CHANnel1 (1), CHANnel2 (2), CHANnel3 (3), CHANnel4 (4), D0 (5), D1 (6), D2 (7), D3 (8), D4 (9), D5 (10), D6 (11), D7 (12), D8 (13), D9 (14), D10 (15), D11 (16), D12 (17), D13 (18), D14 (19), D15 (20)
+TRIGger      19    GET   6     CHAN1 (1), CHAN2 (2), CHAN3 (3), CHAN4 (4), D0 (5), D1 (6), D2 (7), D3 (8), D4 (9), D5 (10), D6 (11), D7 (12), D8 (13), D9 (14), D10 (15), D11 (16), D12 (17), D13 (18), D14 (19), D15 (20)
+TRIGger      20    SET   6     GREater (1), LESS (2), GLESs (3)
+TRIGger      21    GET   6     GRE (1), LESS (2), GLES (3)
+TRIGger      22    SET   6     CHANnel1 (1), CHANnel2 (2), CHANnel3 (3), CHANnel4 (4)
+TRIGger      23    GET   6     CHAN1 (1), CHAN2 (2), CHAN3 (3), CHAN4 (4)
+TRIGger      24    SET   6     TA (0), TB (1), TAB (2)
+TRIGger      25    GET   6     TA (0), TB (1), TAB (2)
+TRIGger      26    SET   6     POSitive (0), NEGative (1)
+TRIGger      27    GET   6     POS (0), NEG (1)
+TRIGger      28    SET   6     ODDField (2), EVENfield (3), LINE (1), ALINes (0)
+TRIGger      29    GET   6     ODDF (2), EVEN (3), LINE (1), ALIN (0)
+TRIGger      30    SET   0     
+TRIGger      31    GET   0     
+TRIGger      32    SET   6     PALSecam (1), NTSC (0), 480P (2), 576P (3)
+TRIGger      33    GET   6     PALS (1), NTSC (0), 480P (2), 576P (3)
+TRIGger      34    SET   6     H (0), L (1), X (2), R (3), F (4)
+TRIGger      35    GET   4     
+TRIGger      36    SET   6     H (0), L (1), X (2)
+TRIGger      37    SET   6     GREater (1), LESS (2), GLESs (3), UNGLess (4)
+TRIGger      38    GET   6     GRE (1), LESS (2), GLES (3), UNGL (4)
+TRIGger      39    SET   6     NONE (0), GREater (1), LESS (2), GLESs (3)
+TRIGger      40    GET   6     NONE (0), GRE (1), LESS (2), GLES (3)
+TRIGger      41    SET   6     POSitive (0), NEGative (1), RFALl (2)
+TRIGger      42    GET   6     POS (0), NEG (1), RFAL (2)
+TRIGger      43    SET   6     ENTer (0), EXIT (1), TIME (2)
+TRIGger      44    GET   6     ENT (0), EXIT (1), TIME (2)
+TRIGger      45    SET   6     GREater (1), LESS (2), GLESs (3), GOUT (4)
+TRIGger      46    GET   6     GRE (1), LESS (2), GLES (3), GOUT (4)
+TRIGger      47    SET   6     H (0), L (1)
+TRIGger      48    GET   6     H (0), L (1)
+TRIGger      49    SET   6     SETup (0), HOLD (1), SETHold (2)
+TRIGger      50    GET   6     SET (0), HOLD (1), SETH (2)
+TRIGger      51    SET   6     STARt (0), ERRor (1), CERRor (2), DATA (3)
+TRIGger      52    GET   6     STAR (0), ERR (1), CERR (2), DATA (3)
+TRIGger      53    SET   6     EVEN (2), ODD (1), NONE (0)
+TRIGger      54    GET   6     EVEN (2), ODD (1), NONE (0)
+TRIGger      55    SET   6     1 (0), 2 (1), 1.5 (2)
+TRIGger      56    GET   6     1 (0), 2 (1), 1.5 (2)
+TRIGger      57    SET   6     5 (4), 6 (5), 7 (6), 8 (7)
+TRIGger      58    GET   6     5 (4), 6 (5), 7 (6), 8 (7)
+TRIGger      59    SET   6     STARt (0), STOP (1), RESTart (2), NACKnowledge (3), ADDRess (4), DATA (5), ADATa (6)
+TRIGger      60    GET   6     STAR (0), STOP (1), REST (2), NACK (3), ADDR (4), DATA (5), ADAT (6)
+TRIGger      61    SET   6     7 (0), 8 (2), 10 (1)
+TRIGger      62    GET   6     7 (0), 8 (2), 10 (1)
+TRIGger      63    SET   6     READ (1), WRITe (0), RWRite (2)
+TRIGger      64    GET   6     READ (1), WRIT (0), RWR (2)
+TRIGger      65    SET   7     
+TRIGger      66    SET   6     H (0), L (1), RXTX (2), DIFFerential (3)
+TRIGger      67    GET   6     H (0), L (1), RXTX (2), DIFF (3)
+TRIGger      68    SET   6     SOF (0), EOF (1), IDRemote (2), OVERload (3), IDFRame (4), DATafream (5), IDData (6), ERFReam (7), ERANswer (9), ERCHeck (10), ERFormat (11), ERRandom (12)
+TRIGger      69    GET   6     SOF (0), EOF (1), IDR (2), OVER (3), IDFR (4), DAT (5), IDD (6), ERFR (7), ERAN (9), ERCH (10), ERF (11), ERR (12)
+TRIGger      70    SET   6     HIGH (0), LOW (1)
+TRIGger      71    GET   6     HIGH (0), LOW (1)
+TRIGger      72    SET   6     CS (0), TIMeout (1)
+TRIGger      73    GET   6     CS (0), TIM (1)
+TRIGger      74    SET   6     TSS (0), FRAMe (1), SYMBol (2), ERRor (3)
+TRIGger      75    GET   6     TSS (0), FRAM (1), SYMB (2), ERR (3)
+TRIGger      76    SET   6     IIS (0), LJ (1), RJ (2)
+TRIGger      77    GET   6     IIS (0), LJ (1), RJ (2)
+TRIGger      78    SET   6     NEGative (1), POSitive (0)
+TRIGger      79    GET   6     NEG (1), POS (0)
+TRIGger      80    SET   6     EQUal (0), NOTequal (1), LESSthan (3), GREaterthan (2), INRange (4), OUTRange (5)
+TRIGger      81    GET   6     EQU (0), NOT (1), LESS (3), GRE (2), INR (4), OUTR (5)
+TRIGger      82    SET   6     RIGHt (1), LEFT (0), EITHer (2)
+TRIGger      83    GET   6     RIGH (1), LEFT (0), EITH (2)
+TRIGger      84    SET   6     1X (0), 2X (1)
+TRIGger      85    GET   6     1X (0), 2X (1)
+TRIGger      86    SET   6     SYNCbreak (0), ID (1), DATA (2), IDData (3), SLEep (4), WAKeup (5), ERRor (6)
+TRIGger      87    GET   6     SYNC (0), ID (1), DATA (2), IDD (3), SLE (4), WAK (5), ERR (6)
+TRIGger      88    SET   6     SYNCbreak (0), DATA (1), CMD (2), STATus (3), ERRor (4)
+TRIGger      89    GET   6     SYNC (0), DATA (1), CMD (2), STAT (3), ERR (4)
+WAVeform     0     SET   6     CHANnel1 (1), CHANnel2 (2), CHANnel3 (3), CHANnel4 (4), MATH1 (37), MATH2 (38), MATH3 (39), MATH4 (40), D0 (5), D1 (6), D2 (7), D3 (8), D4 (9), D5 (10), D6 (11), D7 (12), D8 (13), D9 (14), D10 (15), D11 (16), D12 (17), D13 (18), D14 (19), D15 (20)
+WAVeform     1     GET   6     CHAN1 (1), CHAN2 (2), CHAN3 (3), CHAN4 (4), D0 (5), D1 (6), D2 (7), D3 (8), D4 (9), D5 (10), D6 (11), D7 (12), D8 (13), D9 (14), D10 (15), D11 (16), D12 (17), D13 (18), D14 (19), D15 (20), MATH1 (37), MATH2 (38), MATH3 (39), MATH4 (40)
+WAVeform     2     SET   6     NORMal (0), MAXimum (1), RAW (2)
+WAVeform     3     GET   6     NORM (0), MAX (1), RAW (2)
+WAVeform     4     SET   6     WORD (1), BYTE (0), ASCii (2)
+WAVeform     5     GET   6     WORD (1), BYTE (0), ASC (2)
+WAVeform     6     SET   0     
+WAVeform     7     GET   0     
+WAVeform     8     GET   86    
+WAVeform     9     GET   13    
+WAVeform     10    GET   2     

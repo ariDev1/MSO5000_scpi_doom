@@ -1,0 +1,4 @@
+pyvisa
+pyvisa-py
+requests
+zeroconf
