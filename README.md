@@ -1,98 +1,121 @@
+# 🧠 MSO5000 SCPI Doom Interface
 
-# Doom SCPI Toolkit for Rigol MSO5000 Series
+Welcome to the **MSO5000 SCPI Doom Interface**, a terminal-based utility for interacting with your **Rigol MSO5000 oscilloscope** using SCPI commands — now powered by our freshly enhanced script: `doom.py`.
 
-![Status](https://img.shields.io/badge/SCPI%20Status-DOOM--READY-red?style=for-the-badge)
-![License](https://img.shields.io/github/license/ariDev1/MSO5000_scpi_doom?style=for-the-badge)
-![Python](https://img.shields.io/badge/Made%20with-Python%203-blue?style=for-the-badge)
-![Public](https://img.shields.io/badge/Visibility-Public-brightgreen?style=for-the-badge)
+> Formerly known as `doom2.py`, the latest version is now cleaner, funnier, and way more pinky.
 
-Welcome to the **Doom SCPI Toolkit**, a powerful and slightly insane command-line tool for exploring, testing, and fuzzing SCPI commands on Rigol MSO5000 series oscilloscopes.
+---
 
-What started as a humble `doom2.py` has now evolved into a fully intelligent chaos machine with Pinky, Brain, and a growing SCPI consciousness.
+## ⚙️ Features
 
-## 🖼️ Screenshot
+- 📡 Connect via **LAN or USB** to any MSO5000 scope
+- 🤖 Full SCPI command support with autocomplete
+- 🧠 `pinky` mode: random **Brain & Pinky quotes** stream into your terminal
+- 🎨 Colorful logging and improved debug output
+- 📁 Modular: Quotes and learned SCPI commands stored in separate files
+- 🧪 Interactive SCPI testing with fuzzy logic and command learning
+- 🔒 Offline, secure — no dependencies beyond Python 3 standard library
 
-Here's a glimpse of `doom2.py` learning with full Pinky-BFG mode:
+---
 
-![Screenshot of Doom3 in action](doc/screenshot.png)
+## 🚀 Quick Start
 
-## 🧠 Features
-
-- 🧪 **Test** 200+ known SCPI commands (`test`)
-- 🧠 **Learn** new undocumented commands with randomized discovery (`learn`)
-- 🧬 **Fuzz** your oscilloscope and see what answers (`fuzz`)
-- 📡 **Query waveform data** (`waveform`)
-- 📂 **Check installed licenses** (`licenses`)
-- 🧙 **Dual-layer command loading**:
-  - `scpi_command_list.txt` – stable core list
-  - `learned_scpi_commands_latest.txt` – user discoveries
-- 🔥 DOOM-themed learning mode with funny Pinky & Brain logs
-
-## 🕹️ Usage
+### 1. Clone the repository
 
 ```bash
-python doom2.py list
-python doom2.py test --ip 192.168.1.54
-python doom2.py group MATH1 --ip 192.168.1.54
-python doom2.py fuzz --ip 192.168.1.54
-python doom2.py learn --ip 192.168.1.54
-python doom2.py waveform CHAN1 --ip 192.168.1.54
-python doom2.py licenses 192.168.1.54
+git clone https://github.com/ariDev1/MSO5000_scpi_doom.git
+cd MSO5000_scpi_doom
 ```
 
-## 📁 Files
-
-- `doom2.py` — main script
-- `scpi_command_list.txt` — safe, curated baseline commands
-- `learned_scpi_commands_*.txt` — new commands discovered during learning
-- `learned_scpi_commands_latest.txt` — always loaded alongside main list
-- `Rigol_MSO5000_SCPI_Commands.txt` — reference SCPI database
-- `Rigol_MSO5000_SCPI_Indexes.txt` — metadata for direction, values
-
-## 🛑 Safety Notice
-
-This tool is for advanced users. While most queries are safe, certain SCPI commands can:
-- Restart or reset the scope
-- Wipe memory or settings
-- Enter unknown or locked states
-
-Use responsibly, and **never point Pinky at a production instrument** without knowing what you’re doing.
-
-## 💾 Logging
-
-All test runs and learnings are saved to timestamped `doom2_log_*.txt` and `learned_scpi_commands_*.txt` files for traceability.
-
-## 🧰 Dependencies
-
-- Python 3.7+
-- `pyvisa, pyvisa-py, zeroconf, psutil`
-- Optional: `requests` for license checking
-
-Create a virtual environment for Doom:
+### 2. Run the script
 
 ```bash
-python3 -m venv venv
-source venv/bin/activate
+python3 doom.py
 ```
 
-Install with:
+Use `--help` to see all available modes:
 
 ```bash
-pip install -r requirements.txt
+python3 doom.py --help
 ```
 
-## 🙏 Credits
+---
 
-- Developed by a curious human and an overly enthusiastic LLM assistant
-- Inspired by DOOM, SCPI chaos, and late-night debugging hallucinations
+## 🎮 Modes
 
-## 💡 Future Ideas
+| Mode        | Command Example                        | Description                                           |
+|-------------|----------------------------------------|-------------------------------------------------------|
+| **Connect** | `doom.py send --ip 192.168.1.100`      | SCPI interactive shell via LAN                       |
+| **USB**     | `doom.py send --usb`                   | SCPI interactive shell via USB                       |
+| **Waveform**| `doom.py waveform CHAN1 --ip 192.168`  | Export CSV waveform from selected channel            |
+| **Learn**   | `doom.py learn --ip 192.168.1.100`     | Crawl unknown SCPI commands (fuzzing)                |
+| **Pinky**   | `doom.py pinky`                        | 🧠 Terminal brainwash with Pinky & Brain quotes       |
 
-- SCPI coverage heatmap
-- HTML or GUI frontend
-- Animated ASCII Pinky dashboard
-- Online SCPI decoder
+---
+
+## 🧠 Pinky & Brain Mode
+
+Activate by running:
+
+```bash
+python3 doom.py pinky
+```
+
+This will stream random quotes like:
+
+```
+🧠 I think so, Brain, but if we didn't have ears, we'd look like weasels.
+🧠 The same thing we do every night, Pinky... try to take over the world!
+```
+
+Each quote line has randomized colors and timings.
+
+---
+
+## 📁 Folder Structure
+
+```
+📂 MSO5000_scpi_doom/
+├── doom.py               ← Main script
+├── pinky_quotes.p        ← Pickled quote list
+├── learned_scpi_*        ← Autogenerated learned SCPI command files
+├── README.md             ← This file
+```
+
+---
+
+## 📦 Requirements
+
+- Python 3.6+
+- A Rigol MSO5000 series oscilloscope with LAN or USB access
+- No additional Python packages needed (runs with standard library)
+
+---
+
+## ✅ Status
+
+| Component       | Status      |
+|-----------------|-------------|
+| LAN connection  | ✅ Stable   |
+| USB connection  | ✅ Stable   |
+| SCPI learning   | 🧪 Experimental |
+| Pinky mode      | 🧠 Brainwashed |
+| doom2.py        | ❌ Removed – merged into `doom.py` |
+
+---
 
 ## 📜 License
 
-MIT License. Go forth and interrogate responsibly.
+This project is open-source and available under the MIT License.  
+Use at your own risk — especially in `pinky` mode.
+
+---
+
+## 💬 Feedback
+
+Issues, suggestions, or new Pinky quotes?  
+[Open an issue](https://github.com/ariDev1/MSO5000_scpi_doom/issues) or send a pull request.
+
+---
+
+🐭 _"Narf!"_

@@ -10,6 +10,7 @@ import threading
 import readline
 import rlcompleter
 from datetime import datetime
+from pinky_quotes import phrases
 
 COMMAND_FILE = "scpi_command_list.txt"
 INDEX_FILE = "Rigol_MSO5000_SCPI_Indexes.txt"
@@ -17,32 +18,12 @@ COMMAND_DB_FILE = "Rigol_MSO5000_SCPI_Commands.txt"
 
 SKIP_PATTERNS = ["WAV:DATA?", "DISPlay:DATA?"]
 GREEN, YELLOW, RED, RESET = "\033[92m", "\033[93m", "\033[91m", "\033[0m"
+DRY_RUN = "--dry-run" in sys.argv
 
 def log(msg, color=RESET):
     print(f"{color}{msg}{RESET}")
 
 def random_thinking():
-    phrases = [
-        "🐰 Pinky connected the probe... again.",
-        "🧠 Brain says: 'We're going to interrogate every SCPI bit tonight, Pinky.'",
-        "🔬 Amplifying neural SCPI harmonics...",
-        "🎯 Targeting :CHANnel1 mindspace...",
-        "👾 Spawning Pinky subprocess...",
-        "☠️ Found residue from a failed command rebellion...",
-        "💣 DOOM mode activated. Sending in BFG9000...",
-        "📡 Listening to Rigol dreams...",
-        "🔗 Unlocking forbidden opcodes...",
-        "🛠️ Rebuilding command reality brick by byte...",
-        "🍕 Pinky paused for a pizza. Brain not amused...",
-        "🧪 Synthesizing new SCPI molecules in the lab...",
-        "🎮 Pinky accidentally set trigger mode to NIGHTMARE.",
-        "📟 Trying :BUS4:RS232:PEND? while whistling the DOOM theme...",
-        "🌀 Brain is calculating 12-dimensional SCPI vectors...",
-        "🔐 Attempting to picklock :SYSTem:SECure?", 
-        "🐰 Pinky asked the scope politely. It responded with a beep.",
-        "🧠 Brain is building a recursive command parser... with crayons.",
-        "👣 Tracing SCPI breadcrumbs through the logic analyzer."
-    ]
     if random.random() < 0.5:
         log(random.choice(phrases), YELLOW)
 
@@ -54,15 +35,22 @@ def load_commands():
         log("❌ scpi_command_list.txt not found", RED)
         sys.exit(1)
 
-def load_all_commands():
+def load_all_commands(idn=None):
     cmds = set(load_commands())
+    if idn:
+        tag = idn.replace(',', '_').replace(' ', '_').replace('.', '_').strip()
+        learned_file = f"learned_scpi_latest_{tag}.txt"
+    else:
+        learned_file = "learned_scpi_commands_latest.txt"
+
     try:
-        with open("learned_scpi_commands_latest.txt", "r") as f:
+        with open(learned_file, "r") as f:
             learned = [line.strip() for line in f if line.strip()]
             cmds.update(learned)
-            log(f"➕ Included {len(learned)} learned commands", YELLOW)
+            log(f"➕ Included {len(learned)} learned commands from {learned_file}", YELLOW)
     except FileNotFoundError:
         pass
+
     return sorted(cmds)
 
 def load_known_scpi_db():
@@ -104,39 +92,53 @@ def connect(resource_str):
         scope.chunk_size = 102400
         idn = scope.query("*IDN?")
         log(f"✅ Connected: {idn}", GREEN)
-        return scope
+        return scope, idn
     except Exception as e:
         log(f"❌ Connection failed: {e}", RED)
-        return None
+        return None, None
 
-def test_all(scope):
-    cmds = load_all_commands()
+def test_all(scope, idn=None):
+    cmds = load_all_commands(idn=idn)
     results = []
     for i, cmd in enumerate(cmds, 1):
+        cmd = cmd.strip()
+        if any(skip in cmd for skip in SKIP_PATTERNS):
+            log(f"⏭️ Skipped {cmd}", YELLOW)
+            continue
         try:
-            r = scope.query(cmd).strip()
-            res = f"✅ {r}" if r else "⚠️ Empty"
+            if DRY_RUN:
+                res = "💤 (dry-run)"
+            else:
+                r = scope.query(cmd).strip()
+                res = f"✅ {r}" if r else "⚠️ Empty"
         except Exception as e:
             res = f"❌ {e}"
         results.append((cmd, res))
         log(f"▶ [{i}/{len(cmds)}] {cmd:<40} → {res}", GREEN if '✅' in res else RED if '❌' in res else YELLOW)
-    save_log("test_all", results)
+    save_log("test_all", results, idn=idn)
 
-def test_group(scope, prefix):
+def test_group(scope, prefix, idn=None):
     cmds = [c for c in load_all_commands() if c.startswith(f":{prefix.upper()}")]
     if not cmds:
         log(f"❌ No commands found for group '{prefix}'", RED)
         return
     results = []
     for i, cmd in enumerate(cmds, 1):
+        cmd = cmd.strip()
+        if any(skip in cmd for skip in SKIP_PATTERNS):
+            log(f"⏭️ Skipped {cmd}", YELLOW)
+            continue
         try:
-            r = scope.query(cmd).strip()
-            res = f"✅ {r}" if r else "⚠️ Empty"
+            if DRY_RUN:
+                res = "💤 (dry-run)"
+            else:
+                r = scope.query(cmd).strip()
+                res = f"✅ {r}" if r else "⚠️ Empty"
         except Exception as e:
             res = f"❌ {e}"
         results.append((cmd, res))
         log(f"▶ [{i}/{len(cmds)}] {cmd:<40} → {res}", GREEN if '✅' in res else RED if '❌' in res else YELLOW)
-    save_log(f"group_{prefix}", results)
+    save_log(f"group_{prefix}", results, idn=idn)
 
 def query_licenses(ip):
     try:
@@ -168,7 +170,7 @@ def run_waveform_test(scope, channel="CHAN1"):
     except Exception as e:
         log(f"❌ Waveform read error: {e}", RED)
 
-def fuzz_scope(scope, attempts=50):
+def fuzz_scope(scope, idn=None, attempts=50):
     results = []
     try:
         for i in range(attempts):
@@ -177,8 +179,11 @@ def fuzz_scope(scope, attempts=50):
                 random.choice(["SCALe", "OFFSet", "COUPling", "STATus", "GRADing", "FORM", "SOURce"]),
             ]) + "?"
             try:
-                r = scope.query(cmd).strip()
-                res = f"✅ {r}" if r else "⚠️ Empty"
+                if DRY_RUN:
+                    res = "💤 (dry-run)"
+                else:
+                    r = scope.query(cmd).strip()
+                    res = f"✅ {r}" if r else "⚠️ Empty"
             except Exception as e:
                 res = f"❌ {e}"
             results.append((cmd, res))
@@ -187,9 +192,9 @@ def fuzz_scope(scope, attempts=50):
     except KeyboardInterrupt:
         log("\n🛑 FUZZ interrupted by user (Ctrl+C)", RED)
     
-    save_log("fuzz", results)
+    save_log("fuzz", results, idn=idn)
 
-def learn_scope(scope, attempts=100):
+def learn_scope(scope, idn=None, attempts=100):
     known = set(load_all_commands())
     discovered = []
     pinky_logged = False
@@ -200,13 +205,25 @@ def learn_scope(scope, attempts=100):
                 random.choice(["CHANnel1", "MATH1", "BUS1", "TRIGger", "DISPlay", "WAVeform", "MEASure", "TIMebase", "SYSTem"]),
                 random.choice(["SCALe", "OFFSet", "COUPling", "STATus", "GRADing", "FORM", "SOURce", "OPERator", "MODE", "TYPE"])
             ]) + "?"
+            cmd = cmd.strip()
+
+            # Skip known and already discovered commands
             if cmd in known or cmd in [d[0] for d in discovered]:
                 continue
+
+            # Skip potentially problematic patterns
+            if any(skip in cmd for skip in SKIP_PATTERNS):
+                continue
+
             try:
-                r = scope.query(cmd).strip()
-                if r:
-                    discovered.append((cmd, r))
-                    log(f"🧠 Learned: {cmd} → {r}", GREEN)
+                if DRY_RUN:
+                    discovered.append((cmd, "💤 (dry-run)"))
+                    log(f"🧠 Would test: {cmd}", YELLOW)
+                else:
+                    r = scope.query(cmd).strip()
+                    if r:
+                        discovered.append((cmd, r))
+                        log(f"🧠 Learned: {cmd} → {r}", GREEN)
             except Exception:
                 continue
 
@@ -220,20 +237,23 @@ def learn_scope(scope, attempts=100):
         log("\n🛑 Learning interrupted by user (Ctrl+C)", RED)
 
     if discovered:
-        timestamped = f"learned_scpi_commands_{datetime.now():%Y%m%d_%H%M%S}.txt"
-        latest = "learned_scpi_commands_latest.txt"
+        tag = idn.replace(',', '_').replace(' ', '_').replace('.', '_').strip() if idn else "unknown"
+        timestamped = f"learned_scpi_{tag}_{datetime.now():%Y%m%d_%H%M%S}.txt"
+        latest = f"learned_scpi_latest_{tag}.txt"
         with open(timestamped, "w") as f1, open(latest, "w") as f2:
             for cmd, _ in discovered:
-                f1.write(cmd + "\n")
-                f2.write(cmd + "\n")
+                f1.write(cmd.strip() + "\n")
+                f2.write(cmd.strip() + "\n")
         log(f"💾 Learned {len(discovered)} new commands → {timestamped}", GREEN)
         log(f"📌 Updated latest discoveries → {latest}", YELLOW)
     else:
         log("🤷 Nothing new discovered.", YELLOW)
 
-def save_log(name, results):
-    fname = f"doom2_log_{name}_{datetime.now():%Y%m%d_%H%M%S}.txt"
+def save_log(name, results, idn=None):
+    fname = f"doom_log_{name}_{datetime.now():%Y%m%d_%H%M%S}.txt"
     with open(fname, "w") as f:
+        if idn:
+            f.write(f"# Scope IDN: {idn}\n")
         for cmd, result in results:
             f.write(f"{cmd:<40} → {result}\n")
     log(f"💾 Saved log to {fname}", GREEN)
@@ -260,40 +280,48 @@ def resolve_scope(argv):
         log("❌ Specify --ip <addr> or --usb", RED)
         sys.exit(1)
 
-def setup_scpi_autocomplete():
-    cmds = load_all_commands()
+def setup_scpi_autocomplete(idn=None):
+    cmds = load_all_commands(idn=idn)
     print(f"[DEBUG] Loaded {len(cmds)} SCPI commands for autocomplete")
 
+    readline.set_completer_delims(" \t\n")  # Allow colons
+
     def completer(text, state):
-        matches = [c for c in cmds if text.upper() in c.upper()]
+        buffer = readline.get_line_buffer().strip()
+        line = buffer.upper()
+
+        # Match whole command if starting with ":" or partial otherwise
+        if not line or line.startswith(":"):
+            matches = [cmd for cmd in cmds if cmd.upper().startswith(line)]
+        else:
+            matches = [cmd for cmd in cmds if cmd.upper().startswith(":" + line)]
+
         if state == 0:
-            print(f"\n[DEBUG] Autocomplete matches for '{text}':")
+            print(f"\n[DEBUG] Autocomplete matches for '{buffer}':")
             for m in matches:
                 print(" →", m)
         return matches[state] if state < len(matches) else None
 
     readline.set_completer(completer)
-    readline.set_completer_delims(" \t\n")  # ← important: allows colon-based words
-
-    if "libedit" in readline.__doc__:
-        readline.parse_and_bind("bind ^I rl_complete")
-    else:
-        readline.parse_and_bind("tab: complete")
+    readline.parse_and_bind("tab: complete")
 
 def main():
     if len(sys.argv) < 2:
         print("💀 DOOM SCPI Toolkit - Usage Guide 💀")
         print("====================================")
-        print("  🔍 doom2 list                            List all VISA resources")
-        print("  🧪 doom2 test      --ip <addr> | --usb   Run full SCPI test suite")
-        print("  🎯 doom2 group     <GROUP> --ip | --usb  Test SCPI commands by group (e.g., MATH1)")
-        print("  🧾 doom2 licenses  <ip>                  Query installed license keys")
-        print("  📉 doom2 waveform  <CH> --ip | --usb     Retrieve waveform data (e.g., CHAN1)")
-        print("  💣 doom2 fuzz      --ip <addr> | --usb   Fuzz scope with random SCPI queries")
-        print("  🧠 doom2 learn     --ip <addr> | --usb   Discover new SCPI commands via probing")
-        print("  ✉️ doom2 send \"<SCPI>\" --ip | --usb    Send any SCPI command (quoted)")
+        print("  🔍 doom list                            List all VISA resources")
+        print("  🧪 doom test      --ip <addr> | --usb   Run full SCPI test suite")
+        print("  🎯 doom group     <GROUP> --ip | --usb  Test SCPI commands by group (e.g., MATH1)")
+        print("  🧾 doom licenses  <ip>                  Query installed license keys")
+        print("  📉 doom waveform  <CH> --ip | --usb     Retrieve waveform data (e.g., CHAN1)")
+        print("  💣 doom fuzz      --ip <addr> | --usb   Fuzz scope with random SCPI queries")
+        print("  🧠 doom learn     --ip <addr> | --usb   Discover new SCPI commands via probing")
+        print("  ✉️ doom send \"<SCPI>\" --ip | --usb    Send any SCPI command (quoted)")
+        print("  🐰 doom pinky                          Activate Gehirnwäsche mode (easter egg)")
         print("====================================")
-        print("🛠️  Example: doom2 test --ip 192.168.2.70")
+        if DRY_RUN:
+            print("🚫  NOTE: --dry-run mode is enabled — no SCPI commands will be sent!")
+        print("🛠️  Example: doom test --ip 192.168.2.70")
         return
 
     mode = sys.argv[1].lower()
@@ -306,39 +334,50 @@ def main():
         else:
             query_licenses(sys.argv[2])
     elif mode == "test":
-        scope = connect(resolve_scope(sys.argv))
+        scope, idn = connect(resolve_scope(sys.argv))
         if scope:
-            test_all(scope)
+            test_all(scope, idn=idn)
             scope.close()
     elif mode == "group":
         if len(sys.argv) < 3:
             log("❌ Group name required", RED)
             return
-        scope = connect(resolve_scope(sys.argv))
+        scope, idn = connect(resolve_scope(sys.argv))
         if scope:
-            test_group(scope, sys.argv[2])
+            test_group(scope, sys.argv[2], idn=idn)
             scope.close()
     elif mode == "waveform":
-        scope = connect(resolve_scope(sys.argv))
+        scope, idn = connect(resolve_scope(sys.argv))
         if scope:
             run_waveform_test(scope, sys.argv[2] if len(sys.argv) > 2 else "CHAN1")
             scope.close()
     elif mode == "fuzz":
-        scope = connect(resolve_scope(sys.argv))
+        scope, idn = connect(resolve_scope(sys.argv))
         if scope:
-            fuzz_scope(scope)
+            fuzz_scope(scope, idn=idn)
             scope.close()
     elif mode == "learn":
-        scope = connect(resolve_scope(sys.argv))
+        scope, idn = connect(resolve_scope(sys.argv))
         if scope:
-            learn_scope(scope)
+            learn_scope(scope, idn=idn)
             scope.close()
+    elif mode == "pinky":
+        from pinky_quotes import phrases
+        colors = [GREEN, YELLOW, RED, "\033[95m", "\033[96m", "\033[94m", "\033[90m"]  # magenta, cyan, blue, gray
+        log("🐰 Initiating Gehirnwäsche protocol with Pinky & Brain quotes...\n", YELLOW)
+        try:
+            while True:
+                time.sleep(random.uniform(0.3, 1.2))
+                quote = random.choice(phrases)
+                color = random.choice(colors)
+                log(quote, color)
+        except KeyboardInterrupt:
+            log("\n🧠 Brain override: Gehirnwäsche interrupted by user (Ctrl+C)", RED)
     elif mode == "send":
         # Collect everything after "send"
         args = sys.argv[2:]
 
         # Detect connection target
-        scope = None
         if "--ip" in args:
             idx = args.index("--ip")
             if idx + 1 < len(args):
@@ -356,30 +395,43 @@ def main():
         stripped_args = [a for a in args if a not in ["--ip", "--usb"] and not re.match(r"\d+\.\d+\.\d+\.\d+", a)]
         cmd = " ".join(stripped_args).strip()
 
-        # Interactive mode if no command
+        # Interactive console if no command is passed
         if not cmd:
+            scope, idn = connect(resource)
+            if not scope:
+                return
             log("💡 Enter SCPI command interactively (TAB autocompletion enabled)", YELLOW)
-            setup_scpi_autocomplete()
-            try:
-                cmd = input("🧠 SCPI> ").strip()
-            except KeyboardInterrupt:
-                log("\n🛑 Aborted.", RED)
-                return
-            if not cmd:
-                log("❌ No SCPI command entered", RED)
-                return
+            setup_scpi_autocomplete(idn=idn)
+            while True:
+                try:
+                    cmd = input("🧠 SCPI> ").strip()
+                    if not cmd:
+                        continue
+                    if cmd.lower() in ["exit", "quit"]:
+                        log("👋 Exiting SCPI console.", YELLOW)
+                        break
+                    if "?" in cmd:
+                        response = scope.query(cmd).strip()
+                        log(f"✅ Response: {response}" if response else "⚠️  Empty response", GREEN)
+                    else:
+                        scope.write(cmd)
+                        log("✅ Command sent (no response expected)", GREEN)
+                except KeyboardInterrupt:
+                    log("\n🛑 Aborted.", RED)
+                    break
+                except Exception as e:
+                    log(f"❌ SCPI Error: {e}", RED)
+            scope.close()
+            return
 
-        # Connect and send
-        scope = connect(resource)
+        # If command was passed as argument, send it once and exit
+        scope, idn = connect(resource)
         if scope:
             log(f"🚀 Sending SCPI command: {cmd}", YELLOW)
             try:
                 if "?" in cmd:
                     response = scope.query(cmd).strip()
-                    if response:
-                        log(f"✅ Response: {response}", GREEN)
-                    else:
-                        log("⚠️  Empty response received", YELLOW)
+                    log(f"✅ Response: {response}" if response else "⚠️  Empty response", GREEN)
                 else:
                     scope.write(cmd)
                     log("✅ Command sent (no response expected)", GREEN)
@@ -387,7 +439,6 @@ def main():
                 log(f"❌ SCPI Error: {e}", RED)
             finally:
                 scope.close()
-
     else:
         log("❌ Unknown command", RED)
 
