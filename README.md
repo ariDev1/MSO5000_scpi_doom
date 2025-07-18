@@ -65,7 +65,7 @@ All test runs and learnings are saved to timestamped `doom2_log_*.txt` and `lear
 ## 🧰 Dependencies
 
 - Python 3.7+
-- `pyvisa, pyvisa-py, zeroconf`
+- `pyvisa, pyvisa-py, zeroconf, psutil`
 - Optional: `requests` for license checking
 
 Create a virtual environment for Doom:
