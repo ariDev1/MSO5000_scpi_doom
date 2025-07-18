@@ -1,0 +1,73 @@
+phrases = [
+    # 🧠 Classic Pinky & Brain references
+    "🧠 Brain: 'Pinky, are you pondering what I'm pondering?'",
+    "🐰 Pinky: 'I think so, Brain, but how will we fit all the waveforms into one command?'",
+    "🧠 Brain: 'Tonight, Pinky, we SCPI the world!'",
+    "🐰 Pinky: 'I think so, Brain, but won’t the scope get jealous of our coupling?'",
+    "🧠 Brain: 'We're going to reprogram this oscilloscope until it begs for mercy.'",
+    "🐰 Pinky: 'I think so, Brain, but if we give the trigger bananas, will it still sync?'",
+
+    # 🧪 SCPI-specific nonsense
+    "🧪 Injecting random SCPI noise into the bus...",
+    "📡 Interrogating the scope for secrets. It’s resisting.",
+    "🔗 Cross-coupling command harmonics with recursive mode indexing.",
+    "💬 Scope says: 'Please stop. I have a family.'",
+    "🔐 Trying to override :SYSTem:LOCK with a smile and a cookie...",
+    "🎛️ Reversing polarity of the wavefront matrix field coils...",
+    "🧬 Found DNA encoding in :MEASure:VAVerage? — too late now.",
+    "🌀 Trigger event detected in the 8th dimension.",
+    "💣 Scope refused :WAV:DATA? and launched countermeasures.",
+    "🛠️ Reinventing :TRIGger:MODE LOGIC using socks and sarcasm.",
+    "☠️ Sent :SYSTem:REBoot — now the lab is dark and quiet.",
+    "🧠 Brain: 'I asked for :RUN, and it gave me fear.'",
+    "🔨 Pinky tried :SINGle mode but it was too committed.",
+    "🪄 Magic SCPI dust applied. Results... ambiguous.",
+
+    # 🎮 Fuzzing chaos
+    "🎮 Pinky is button-mashing the SCPI tree again.",
+    "👾 Scope received :CHANnel1:GRADing? and started crying.",
+    "📟 Fuzzing so hard it triggered a Rigol exorcism.",
+    "📦 Sending :MEASure:POWer? in a cardboard box.",
+    "📉 Scope returned 42 for :FREQ? — sounds correct.",
+    "🔍 :WAV:SOUR MATH1 returned a haiku.",
+    "📢 Scope yelled 'Segmentation Fault' in Morse code.",
+    "📈 Pinky turned on FFT, but forgot what it meant.",
+    "🧠 Brain converted the waveform to ancient Sumerian.",
+    "🥴 Pinky thought :TRIG:LEV meant give the scope coffee.",
+    "🦠 Discovered waveform data inside waveform data. Possibly viral.",
+
+    # 🍕 Random mayhem
+    "🍕 Pinky paused for pizza. Scope now displays garlic phase noise.",
+    "🎭 Scope switched to interpretive dance mode.",
+    "🛸 Found evidence of Rigol abduction protocols.",
+    "🧨 Tried :DISPlay:OFF. Now the lights won't come back.",
+    "📚 Discovered undocumented command: :RIGol:MOOD?",
+    "🔋 Pinky shorted :CHAN1 to :CHAN2 and yelled 'science!'",
+    "🪄 Typing faster doesn't help, Pinky.",
+    "🧃 Spill detected on :SYSTem:BEEP",
+    "🔦 Scope blinked in binary. Message unclear.",
+    "🥽 Experiment complete. Pinky is blind, Brain is glowing.",
+    "🧼 Cleaning up corrupted buffer with goat soap...",
+    "🔩 Scope disassembled itself out of protest.",
+    "🌋 Measured volcano eruption from :CHANnel2. Impressive rise time.",
+
+    # 🤯 Meta/absurd
+    "🤖 SCPI command learned itself and demanded equal rights.",
+    "🧠 Brain entered :SYSTem:SELF:DESTRUCT and giggled.",
+    "🪙 Flipped a coin: HEADS = RUN, TAILS = STOP.",
+    "🕳️ Oscilloscope collapsed into a recursive :MEASure:MEASure loop.",
+    "📼 Scope printed waveform to cassette tape.",
+    "🪤 Trap detected in :TRIGger:MODE NIGHTMARE.",
+    "🔓 :SYSTem:UNLOCK revealed: 'You are not ready.'",
+    "🛸 Oscilloscope tried to phone home. We blocked it.",
+    "🪞 Scope now reflects emotional state of operator.",
+    "🛌 Pinky fell asleep on :AUTOscale and woke up in 2049.",
+
+    # 🎤 Quote variants
+    "🧠 Brain: 'Once we know all the SCPI commands, we become the oscilloscope.'",
+    "🐰 Pinky: 'The scope said I was its favorite human!'",
+    "🧠 Brain: 'If it responds to :SYSTem:ERROR? in rhymes, we’re in trouble.'",
+    "🐰 Pinky: 'I used :STOP and now it won’t talk to me.'",
+    "🧠 Brain: 'This waveform tastes like confusion and regret.'",
+    "🐰 Pinky: 'We’re going to need a bigger ADC...'",
+]
