@@ -4,6 +4,6 @@ __pycache__/
 *.log
 doom_log_*.txt
 focus_results_*.csv
-learned_scpi_commands_*.txt
+learned_scpi_*.txt
 *.swp
 .DS_Store
